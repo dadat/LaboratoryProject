@@ -20,6 +20,7 @@ namespace LaboratoryProject
     private System.Nullable<System.DateTime> _dateRegistered;
     [ValidateLength(0, 50)]
     private string _codeDoctor;
+    private System.Nullable<bool> _isActive;
 
     #endregion
     
@@ -33,6 +34,8 @@ namespace LaboratoryProject
     public const string DateRegisteredField = "DateRegistered";
     /// <summary>Identifies the CodeDoctor entity attribute.</summary>
     public const string CodeDoctorField = "CodeDoctor";
+    /// <summary>Identifies the IsActive entity attribute.</summary>
+    public const string IsActiveField = "IsActive";
 
 
     #endregion
@@ -69,6 +72,13 @@ namespace LaboratoryProject
       set { Set(ref _codeDoctor, value, "CodeDoctor"); }
     }
 
+    [System.Diagnostics.DebuggerNonUserCode]
+    public System.Nullable<bool> IsActive
+    {
+      get { return Get(ref _isActive, "IsActive"); }
+      set { Set(ref _isActive, value, "IsActive"); }
+    }
+
     #endregion
   }
 
@@ -87,6 +97,8 @@ namespace LaboratoryProject
     private string _password;
     private System.Nullable<System.DateTime> _dateRegistered;
     private System.Nullable<bool> _isActive;
+    [ValidateLength(0, 50)]
+    private string _role;
 
     #endregion
     
@@ -100,6 +112,8 @@ namespace LaboratoryProject
     public const string DateRegisteredField = "DateRegistered";
     /// <summary>Identifies the IsActive entity attribute.</summary>
     public const string IsActiveField = "IsActive";
+    /// <summary>Identifies the Role entity attribute.</summary>
+    public const string RoleField = "Role";
 
 
     #endregion
@@ -136,6 +150,13 @@ namespace LaboratoryProject
       set { Set(ref _isActive, value, "IsActive"); }
     }
 
+    [System.Diagnostics.DebuggerNonUserCode]
+    public string Role
+    {
+      get { return Get(ref _role, "Role"); }
+      set { Set(ref _role, value, "Role"); }
+    }
+
     #endregion
   }
 
@@ -159,6 +180,9 @@ namespace LaboratoryProject
     private string _codePatient;
     private System.Nullable<System.DateTime> _dateRegistered;
     private System.Nullable<System.DateTime> _dateUpdated;
+    [ValidateLength(0, 50)]
+    private string _gender;
+    private System.Nullable<int> _age;
 
     #endregion
     
@@ -178,6 +202,10 @@ namespace LaboratoryProject
     public const string DateRegisteredField = "DateRegistered";
     /// <summary>Identifies the DateUpdated entity attribute.</summary>
     public const string DateUpdatedField = "DateUpdated";
+    /// <summary>Identifies the Gender entity attribute.</summary>
+    public const string GenderField = "Gender";
+    /// <summary>Identifies the Age entity attribute.</summary>
+    public const string AgeField = "Age";
 
 
     #endregion
@@ -233,6 +261,20 @@ namespace LaboratoryProject
     {
       get { return Get(ref _dateUpdated, "DateUpdated"); }
       set { Set(ref _dateUpdated, value, "DateUpdated"); }
+    }
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public string Gender
+    {
+      get { return Get(ref _gender, "Gender"); }
+      set { Set(ref _gender, value, "Gender"); }
+    }
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public System.Nullable<int> Age
+    {
+      get { return Get(ref _age, "Age"); }
+      set { Set(ref _age, value, "Age"); }
     }
 
     #endregion
@@ -336,7 +378,7 @@ namespace LaboratoryProject
     [ValidateLength(0, 50)]
     private string _codeTransaction;
     [ValidateLength(0, 50)]
-    private string _dateRegistered;
+    private System.Nullable<System.DateTime> _dateRegistered;
     [ValidateLength(0, 50)]
     private string _codeDoctor;
     [ValidateLength(0, 50)]
@@ -377,7 +419,7 @@ namespace LaboratoryProject
     }
 
     [System.Diagnostics.DebuggerNonUserCode]
-    public string DateRegistered
+    public System.Nullable<System.DateTime> DateRegistered
     {
       get { return Get(ref _dateRegistered, "DateRegistered"); }
       set { Set(ref _dateRegistered, value, "DateRegistered"); }

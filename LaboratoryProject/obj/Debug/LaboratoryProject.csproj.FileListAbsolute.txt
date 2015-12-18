@@ -1,7 +1,6 @@
 c:\users\david\documents\visual studio 2013\Projects\LaboratoryProject\LaboratoryProject\bin\Debug\LaboratoryProject.exe.config
 c:\users\david\documents\visual studio 2013\Projects\LaboratoryProject\LaboratoryProject\bin\Debug\LaboratoryProject.exe
 c:\users\david\documents\visual studio 2013\Projects\LaboratoryProject\LaboratoryProject\bin\Debug\LaboratoryProject.pdb
-c:\users\david\documents\visual studio 2013\Projects\LaboratoryProject\LaboratoryProject\obj\Debug\LaboratoryProject.csprojResolveAssemblyReference.cache
 c:\users\david\documents\visual studio 2013\Projects\LaboratoryProject\LaboratoryProject\obj\Debug\LaboratoryProject.formMain.resources
 c:\users\david\documents\visual studio 2013\Projects\LaboratoryProject\LaboratoryProject\obj\Debug\LaboratoryProject.Properties.Resources.resources
 c:\users\david\documents\visual studio 2013\Projects\LaboratoryProject\LaboratoryProject\obj\Debug\LaboratoryProject.csproj.GenerateResource.Cache
@@ -13,3 +12,6 @@ c:\users\david\documents\visual studio 2013\Projects\LaboratoryProject\Laborator
 c:\users\david\documents\visual studio 2013\Projects\LaboratoryProject\LaboratoryProject\bin\Debug\Mindscape.LightSpeed.xml
 c:\users\david\documents\visual studio 2013\Projects\LaboratoryProject\LaboratoryProject\bin\Debug\Mindscape.LightSpeed.Linq.dll
 c:\users\david\documents\visual studio 2013\Projects\LaboratoryProject\LaboratoryProject\bin\Debug\Mindscape.LightSpeed.Linq.xml
+C:\Users\David\documents\visual studio 2013\Projects\LaboratoryProject\LaboratoryProject\obj\Debug\LaboratoryProject.FormServicesMaint.resources
+C:\Users\David\documents\visual studio 2013\Projects\LaboratoryProject\LaboratoryProject\obj\Debug\LaboratoryProject.FormDocPatient.resources
+C:\Users\David\documents\visual studio 2013\Projects\LaboratoryProject\LaboratoryProject\obj\Debug\LaboratoryProject.csprojResolveAssemblyReference.cache

@@ -11,6 +11,6 @@ namespace LaboratoryProject
         public string username { get; set; }
         public string password { get; set; }
         public DateTime dateRegistered { get; set; }
-        public bool isActive;
+        public bool isActive { get; set; }
     }
 }

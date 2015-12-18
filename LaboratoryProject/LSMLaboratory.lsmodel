@@ -19,6 +19,7 @@
             <lengthValidation minimumLength="0" maximumLength="50" />
           </validations>
         </entityProperty>
+        <entityProperty name="IsActive" dataType="Boolean" isNullable="true" privateSetter="false" />
       </entityProperties>
     </entity>
     <entity name="TblUser" identityType="Int64" cacheExpiry="0" tableName="tblUsers">
@@ -35,6 +36,11 @@
         </entityProperty>
         <entityProperty name="DateRegistered" dataType="DateTime" isNullable="true" privateSetter="false" />
         <entityProperty name="IsActive" dataType="Boolean" isNullable="true" privateSetter="false" />
+        <entityProperty name="Role" isNullable="true" privateSetter="false">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="50" />
+          </validations>
+        </entityProperty>
       </entityProperties>
     </entity>
     <entity name="TblPatient" identityType="Int64" cacheExpiry="0">
@@ -66,6 +72,12 @@
         </entityProperty>
         <entityProperty name="DateRegistered" dataType="DateTime" isNullable="true" privateSetter="false" />
         <entityProperty name="DateUpdated" dataType="DateTime" isNullable="true" privateSetter="false" />
+        <entityProperty name="Gender" isNullable="true" privateSetter="false">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="50" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="Age" dataType="Int32" isNullable="true" privateSetter="false" />
       </entityProperties>
     </entity>
     <entity name="TblService" identityType="Int64" cacheExpiry="0">
@@ -97,7 +109,7 @@
             <lengthValidation minimumLength="0" maximumLength="50" />
           </validations>
         </entityProperty>
-        <entityProperty name="DateRegistered" isNullable="true" privateSetter="false">
+        <entityProperty name="DateRegistered" dataType="DateTime" isNullable="true" privateSetter="false">
           <validations>
             <lengthValidation minimumLength="0" maximumLength="50" />
           </validations>

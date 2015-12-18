@@ -10,6 +10,6 @@ namespace LaboratoryProject
 {
     public static class StaticValues
     {
-        public static LightSpeedContext lscon = new LightSpeedContext();
+        public static LightSpeedContext<LSMLaboratoryUnitOfWork> lscon = new LightSpeedContext<LSMLaboratoryUnitOfWork>();
     }
 }

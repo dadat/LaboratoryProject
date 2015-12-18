@@ -25,6 +25,7 @@ namespace LaboratoryProject
             {
                 var uName = txtAddUsername.Text;
                 var pWord = txtAddPassword.Text;
+                var role = txtRole.Text;
 
                 using (var uow = StaticValues.lscon.CreateUnitOfWork())
                 {
@@ -33,6 +34,7 @@ namespace LaboratoryProject
                     tuser.Password = pWord;
                     tuser.IsActive = true;
                     tuser.DateRegistered = DateTime.Now;
+                    tuser.Role = role;
                     if (tuser.Errors.Count == 0)
                     {
                         uow.Add(tuser);
@@ -55,6 +57,12 @@ namespace LaboratoryProject
         {
             txtAddPassword.Clear();
             txtAddUsername.Clear();
+        }
+
+        private void FormUserControl_Load(object sender, EventArgs e)
+        {
+            txtRole.Text = "USER";
+            txtUpdateRole.Text = "USER";
         }
     }
 }

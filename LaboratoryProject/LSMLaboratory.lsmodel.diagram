@@ -2,22 +2,22 @@
 <minimalLanguageDiagram dslVersion="1.1.0.0" absoluteBounds="0, 0, 13.5, 8.5" name="LSMLaboratory">
   <modelMoniker name="/LSMLaboratory" />
   <nestedChildShapes>
-    <entityShape Id="f77bc986-300a-4c96-a04c-4de53c795959" absoluteBounds="2.75, 1.5, 1.5, 1.2792057291666668">
+    <entityShape Id="f77bc986-300a-4c96-a04c-4de53c795959" absoluteBounds="2.75, 1.5, 1.5, 1.4715071614583333">
       <entityMoniker name="/LSMLaboratory/TblDoctor" />
       <nestedChildShapes>
-        <elementListCompartment Id="408b952c-c391-49e6-b413-ee72e58be858" absoluteBounds="2.765, 1.9100000000000001, 1.4700000000000002, 0.76920572916666663" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="408b952c-c391-49e6-b413-ee72e58be858" absoluteBounds="2.765, 1.9100000000000001, 1.4700000000000002, 0.96150716145833326" name="Properties" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </entityShape>
-    <entityShape Id="e98c1273-3b4f-4aff-85ba-7d827cf0648e" absoluteBounds="5, 2.25, 1.5, 1.2792057291666668">
+    <entityShape Id="e98c1273-3b4f-4aff-85ba-7d827cf0648e" absoluteBounds="5, 2.25, 1.5, 1.4715071614583333">
       <entityMoniker name="/LSMLaboratory/TblUser" />
       <nestedChildShapes>
-        <elementListCompartment Id="3bb32c39-f853-4d94-ba4f-c87c141ec37e" absoluteBounds="5.0150000000000006, 2.66, 1.4700000000000002, 0.76920572916666663" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="3bb32c39-f853-4d94-ba4f-c87c141ec37e" absoluteBounds="5.0150000000000006, 2.66, 1.4700000000000002, 0.96150716145833326" name="Properties" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </entityShape>
-    <entityShape Id="0b155e0b-a92c-4cd1-b217-2f1d5708439f" absoluteBounds="7.25, 3, 1.5, 1.8561100260416668">
+    <entityShape Id="0b155e0b-a92c-4cd1-b217-2f1d5708439f" absoluteBounds="7.25, 3, 1.5, 2.240712890625">
       <entityMoniker name="/LSMLaboratory/TblPatient" />
       <nestedChildShapes>
-        <elementListCompartment Id="31547c35-4ee8-4096-8cf0-f6ae9fb7c011" absoluteBounds="7.2650000000000006, 3.41, 1.4700000000000002, 1.3461100260416665" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="31547c35-4ee8-4096-8cf0-f6ae9fb7c011" absoluteBounds="7.2650000000000006, 3.41, 1.4700000000000002, 1.730712890625" name="Properties" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </entityShape>
     <entityShape Id="1a127280-1252-41b2-8fbb-a27b582e4f10" absoluteBounds="9.5, 3.75, 1.5, 1.6638085937500002">
