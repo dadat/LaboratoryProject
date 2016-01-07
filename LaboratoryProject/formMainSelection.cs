@@ -29,6 +29,12 @@ namespace LaboratoryProject
         {
             try
             {
+                txtLABOther.Enabled = false;
+                checkedListBoxLAB1.CheckOnClick = true;
+                checkedListBoxLAB2.CheckOnClick = true;
+                checkedListBoxLAB3.CheckOnClick = true;
+                checkedListBoxLAB4.CheckOnClick = true;
+                checkedListBoxLAB5.CheckOnClick = true;
                 using (var uow = StaticValues.lscon.CreateUnitOfWork())
                 {
                     var listDoc = (from doc in uow.TblDoctors where doc.IsActive == true select doc).ToList();
@@ -217,8 +223,6 @@ namespace LaboratoryProject
             clearText();
             var p = listExistingPatient.SelectedItem.ToString();
             var patientCode = p.Split(' ').Last();
-            //var lName = p.Split(' ').First();
-            //txtLastName.Text = lName.Trim(',');
             try
             {
                 using (var uow = StaticValues.lscon.CreateUnitOfWork())
@@ -257,6 +261,94 @@ namespace LaboratoryProject
         private void btnNew_Click(object sender, EventArgs e)
         {
             clearText();
+        }
+
+        private void btnXRAYTest_Click(object sender, EventArgs e)
+        {
+            if (txtLABOther.Text == "")
+            {
+
+            }
+            else
+            {
+                var other = txtLABOther.Text;
+                listTestLAB.Items.Add(other);
+                txtLABOther.Clear();
+            }
+
+        }
+
+        private void checkBox48_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxLABOther.Checked)
+            {
+                txtLABOther.Enabled = true;
+            }
+            else
+            {
+                txtLABOther.Clear();
+                txtLABOther.Enabled = false;
+            }
+        }
+
+        private void checkedListBoxLAB4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            generateLABList();
+            checkedListBoxLAB4.ClearSelected();
+        }
+
+        private void generateLABList()
+        {
+            listTestLAB.Items.Clear();
+            foreach (var item in checkedListBoxLAB1.CheckedItems)
+            {
+                listTestLAB.Items.Add(item);
+            }
+            foreach (var item in checkedListBoxLAB2.CheckedItems)
+            {
+                listTestLAB.Items.Add(item);
+            }
+            foreach (var item in checkedListBoxLAB3.CheckedItems)
+            {
+                listTestLAB.Items.Add(item);
+            }
+            foreach (var item in checkedListBoxLAB4.CheckedItems)
+            {
+                listTestLAB.Items.Add(item);
+            }
+            foreach (var item in checkedListBoxLAB5.CheckedItems)
+            {
+                listTestLAB.Items.Add(item);
+            }
+        }
+
+        private void checkedListBoxLAB1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            generateLABList();
+            checkedListBoxLAB1.ClearSelected();
+        }
+
+        private void checkedListBoxLAB2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            generateLABList();
+            checkedListBoxLAB2.ClearSelected();
+        }
+
+        private void checkedListBoxLAB5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            generateLABList();
+            checkedListBoxLAB5.ClearSelected();
+        }
+
+        private void checkedListBoxLAB3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            generateLABList();
+            checkedListBoxLAB3.ClearSelected();
+        }
+
+        private void btnLABSubmit_Click(object sender, EventArgs e)
+        {
+
         }
 
     }
