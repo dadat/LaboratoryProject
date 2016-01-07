@@ -457,6 +457,316 @@ namespace LaboratoryProject
   }
 
 
+  [Serializable]
+  [System.CodeDom.Compiler.GeneratedCode("LightSpeedModelGenerator", "1.0.0.0")]
+  [System.ComponentModel.DataObject]
+  public partial class TblLaboratory : Entity<long>
+  {
+    #region Fields
+  
+    [ValidateLength(0, 50)]
+    private string _codePatient;
+    [ValidateLength(0, 50)]
+    private string _dateLaboratory;
+    [ValidateLength(0, 500)]
+    private string _request;
+    private System.Nullable<decimal> _total;
+    [ValidateLength(0, 50)]
+    private string _codeLaboratory;
+    private System.Nullable<System.DateTime> _dateEncoded;
+
+    #endregion
+    
+    #region Field attribute and view names
+    
+    /// <summary>Identifies the CodePatient entity attribute.</summary>
+    public const string CodePatientField = "CodePatient";
+    /// <summary>Identifies the DateLaboratory entity attribute.</summary>
+    public const string DateLaboratoryField = "DateLaboratory";
+    /// <summary>Identifies the Request entity attribute.</summary>
+    public const string RequestField = "Request";
+    /// <summary>Identifies the Total entity attribute.</summary>
+    public const string TotalField = "Total";
+    /// <summary>Identifies the CodeLaboratory entity attribute.</summary>
+    public const string CodeLaboratoryField = "CodeLaboratory";
+    /// <summary>Identifies the DateEncoded entity attribute.</summary>
+    public const string DateEncodedField = "DateEncoded";
+
+
+    #endregion
+    
+    #region Properties
+
+
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public string CodePatient
+    {
+      get { return Get(ref _codePatient, "CodePatient"); }
+      set { Set(ref _codePatient, value, "CodePatient"); }
+    }
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public string DateLaboratory
+    {
+      get { return Get(ref _dateLaboratory, "DateLaboratory"); }
+      set { Set(ref _dateLaboratory, value, "DateLaboratory"); }
+    }
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public string Request
+    {
+      get { return Get(ref _request, "Request"); }
+      set { Set(ref _request, value, "Request"); }
+    }
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public System.Nullable<decimal> Total
+    {
+      get { return Get(ref _total, "Total"); }
+      set { Set(ref _total, value, "Total"); }
+    }
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public string CodeLaboratory
+    {
+      get { return Get(ref _codeLaboratory, "CodeLaboratory"); }
+      set { Set(ref _codeLaboratory, value, "CodeLaboratory"); }
+    }
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public System.Nullable<System.DateTime> DateEncoded
+    {
+      get { return Get(ref _dateEncoded, "DateEncoded"); }
+      set { Set(ref _dateEncoded, value, "DateEncoded"); }
+    }
+
+    #endregion
+  }
+
+
+  [Serializable]
+  [System.CodeDom.Compiler.GeneratedCode("LightSpeedModelGenerator", "1.0.0.0")]
+  [System.ComponentModel.DataObject]
+  public partial class TblXRay : Entity<long>
+  {
+    #region Fields
+  
+    [ValidateLength(0, 50)]
+    private string _codePatient;
+    [ValidateLength(0, 50)]
+    private string _dateXRay;
+    [ValidateLength(0, 50)]
+    private string _roentgenography;
+    [ValidateLength(0, 50)]
+    private string _filmNo;
+    [ValidateLength(0, 600)]
+    private string _findings;
+    [ValidateLength(0, 150)]
+    private string _remarks;
+    [ValidateLength(0, 100)]
+    private string _radiologist;
+    [ValidateLength(0, 50)]
+    private string _codeXRay;
+    private System.Nullable<System.DateTime> _dateEncoded;
+
+    #endregion
+    
+    #region Field attribute and view names
+    
+    /// <summary>Identifies the CodePatient entity attribute.</summary>
+    public const string CodePatientField = "CodePatient";
+    /// <summary>Identifies the DateXRay entity attribute.</summary>
+    public const string DateXRayField = "DateXRay";
+    /// <summary>Identifies the Roentgenography entity attribute.</summary>
+    public const string RoentgenographyField = "Roentgenography";
+    /// <summary>Identifies the FilmNo entity attribute.</summary>
+    public const string FilmNoField = "FilmNo";
+    /// <summary>Identifies the Findings entity attribute.</summary>
+    public const string FindingsField = "Findings";
+    /// <summary>Identifies the Remarks entity attribute.</summary>
+    public const string RemarksField = "Remarks";
+    /// <summary>Identifies the Radiologist entity attribute.</summary>
+    public const string RadiologistField = "Radiologist";
+    /// <summary>Identifies the CodeXRay entity attribute.</summary>
+    public const string CodeXRayField = "CodeXRay";
+    /// <summary>Identifies the DateEncoded entity attribute.</summary>
+    public const string DateEncodedField = "DateEncoded";
+
+
+    #endregion
+    
+    #region Properties
+
+
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public string CodePatient
+    {
+      get { return Get(ref _codePatient, "CodePatient"); }
+      set { Set(ref _codePatient, value, "CodePatient"); }
+    }
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public string DateXRay
+    {
+      get { return Get(ref _dateXRay, "DateXRay"); }
+      set { Set(ref _dateXRay, value, "DateXRay"); }
+    }
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public string Roentgenography
+    {
+      get { return Get(ref _roentgenography, "Roentgenography"); }
+      set { Set(ref _roentgenography, value, "Roentgenography"); }
+    }
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public string FilmNo
+    {
+      get { return Get(ref _filmNo, "FilmNo"); }
+      set { Set(ref _filmNo, value, "FilmNo"); }
+    }
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public string Findings
+    {
+      get { return Get(ref _findings, "Findings"); }
+      set { Set(ref _findings, value, "Findings"); }
+    }
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public string Remarks
+    {
+      get { return Get(ref _remarks, "Remarks"); }
+      set { Set(ref _remarks, value, "Remarks"); }
+    }
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public string Radiologist
+    {
+      get { return Get(ref _radiologist, "Radiologist"); }
+      set { Set(ref _radiologist, value, "Radiologist"); }
+    }
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public string CodeXRay
+    {
+      get { return Get(ref _codeXRay, "CodeXRay"); }
+      set { Set(ref _codeXRay, value, "CodeXRay"); }
+    }
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public System.Nullable<System.DateTime> DateEncoded
+    {
+      get { return Get(ref _dateEncoded, "DateEncoded"); }
+      set { Set(ref _dateEncoded, value, "DateEncoded"); }
+    }
+
+    #endregion
+  }
+
+
+  [Serializable]
+  [System.CodeDom.Compiler.GeneratedCode("LightSpeedModelGenerator", "1.0.0.0")]
+  [System.ComponentModel.DataObject]
+  public partial class TblUltrasound : Entity<long>
+  {
+    #region Fields
+  
+    [ValidateLength(0, 50)]
+    private string _codePatient;
+    [ValidateLength(0, 50)]
+    private string _dateUltrasound;
+    [ValidateLength(0, 600)]
+    private string _findings;
+    [ValidateLength(0, 150)]
+    private string _impression;
+    [ValidateLength(0, 100)]
+    private string _radiologist;
+    [ValidateLength(0, 50)]
+    private string _codeUltrasound;
+    private System.Nullable<System.DateTime> _dateEncoded;
+
+    #endregion
+    
+    #region Field attribute and view names
+    
+    /// <summary>Identifies the CodePatient entity attribute.</summary>
+    public const string CodePatientField = "CodePatient";
+    /// <summary>Identifies the DateUltrasound entity attribute.</summary>
+    public const string DateUltrasoundField = "DateUltrasound";
+    /// <summary>Identifies the Findings entity attribute.</summary>
+    public const string FindingsField = "Findings";
+    /// <summary>Identifies the Impression entity attribute.</summary>
+    public const string ImpressionField = "Impression";
+    /// <summary>Identifies the Radiologist entity attribute.</summary>
+    public const string RadiologistField = "Radiologist";
+    /// <summary>Identifies the CodeUltrasound entity attribute.</summary>
+    public const string CodeUltrasoundField = "CodeUltrasound";
+    /// <summary>Identifies the DateEncoded entity attribute.</summary>
+    public const string DateEncodedField = "DateEncoded";
+
+
+    #endregion
+    
+    #region Properties
+
+
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public string CodePatient
+    {
+      get { return Get(ref _codePatient, "CodePatient"); }
+      set { Set(ref _codePatient, value, "CodePatient"); }
+    }
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public string DateUltrasound
+    {
+      get { return Get(ref _dateUltrasound, "DateUltrasound"); }
+      set { Set(ref _dateUltrasound, value, "DateUltrasound"); }
+    }
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public string Findings
+    {
+      get { return Get(ref _findings, "Findings"); }
+      set { Set(ref _findings, value, "Findings"); }
+    }
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public string Impression
+    {
+      get { return Get(ref _impression, "Impression"); }
+      set { Set(ref _impression, value, "Impression"); }
+    }
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public string Radiologist
+    {
+      get { return Get(ref _radiologist, "Radiologist"); }
+      set { Set(ref _radiologist, value, "Radiologist"); }
+    }
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public string CodeUltrasound
+    {
+      get { return Get(ref _codeUltrasound, "CodeUltrasound"); }
+      set { Set(ref _codeUltrasound, value, "CodeUltrasound"); }
+    }
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public System.Nullable<System.DateTime> DateEncoded
+    {
+      get { return Get(ref _dateEncoded, "DateEncoded"); }
+      set { Set(ref _dateEncoded, value, "DateEncoded"); }
+    }
+
+    #endregion
+  }
+
+
 
 
   /// <summary>
@@ -489,6 +799,21 @@ namespace LaboratoryProject
     public System.Linq.IQueryable<TblTransaction> TblTransactions
     {
       get { return this.Query<TblTransaction>(); }
+    }
+    
+    public System.Linq.IQueryable<TblLaboratory> TblLaboratories
+    {
+      get { return this.Query<TblLaboratory>(); }
+    }
+    
+    public System.Linq.IQueryable<TblXRay> TblXRays
+    {
+      get { return this.Query<TblXRay>(); }
+    }
+    
+    public System.Linq.IQueryable<TblUltrasound> TblUltrasounds
+    {
+      get { return this.Query<TblUltrasound>(); }
     }
     
   }

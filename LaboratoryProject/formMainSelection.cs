@@ -20,9 +20,60 @@ namespace LaboratoryProject
             InitializeComponent();
         }
 
-        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        public string patientCompleteCode { get; set; }
 
+        
+        
+
+        private void patientCodeGen()
+        {
+            patientInfo();
+            if (txtPatientCode.Text == "")
+            {
+                Random r = new Random();
+                int rand = r.Next(9999);
+                patientCompleteCode = patientInfo().FirstName.Substring(0, 3) + patientInfo().LastName.Substring(0, 3) + rand.ToString();
+            }
+            else
+            {
+                patientCompleteCode = txtPatientCode.Text;
+            }
+        }
+
+        private XRay xRayInfo()
+        {
+            XRay xray = new XRay();
+            xray.Doctor = patientInfo().Doctor;
+            xray.FilmNo = txtXRAYFilmNo.Text.ToUpper();
+            xray.Findings = txtXRAYFindings.Text;
+            xray.Remarks = txtXRAYRemarks.Text;
+            xray.Roentgenography = txtXRAYRoentgenography.Text;
+            xray.Radiologist = txtXRAYRadTech.Text;
+            xray.DatePerformed = txtXRAYDateTimePerformed.Text;
+            return xray;
+        }
+
+        private Patient patientInfo()
+        {
+            Patient patient = new Patient();
+            patient.FirstName = txtFirstName.Text.ToUpper();
+            patient.LastName = txtLastName.Text.ToUpper();
+            patient.Doctor = txtDoctor.Text.Split(' ').Last();
+            patient.Address = txtAddress.Text.ToUpper();
+
+            if (txtAge.Text == "")
+            {
+                patient.Age = 0;
+            }
+            else
+            {
+                patient.Age = Convert.ToInt16(txtAge.Text);
+            }
+
+            patient.Sex = txtGender.Text.ToUpper();
+            patient.Contact = txtContact.Text;
+            patient.PatientCode = txtPatientCode.Text;
+            return patient;
         }
 
         private void formMainSelection_Load(object sender, EventArgs e)
@@ -90,6 +141,81 @@ namespace LaboratoryProject
             Show();
         }
 
+        private void addNewPatient()
+        {
+            if (txtPatientCode.Text != "")
+            {
+                return;
+            }
+            if (txtAge.Text == "")
+            {
+                MessageBox.Show("Please input age.");
+                return;
+            }
+            try
+            {
+                var pFName = txtFirstName.Text.ToUpper();
+                var pLName = txtLastName.Text.ToUpper();
+                var pTCode = "GENERATE CODE HERE";
+                var pDoctor = txtDoctor.Text.Split(' ').Last();
+                var pAddress = txtAddress.Text.ToUpper();
+                var pAge = txtAge.Text.ToUpper();
+                var pGender = txtGender.Text.ToUpper();
+                var pContact = txtContact.Text;
+
+
+                using (var uow = StaticValues.lscon.CreateUnitOfWork())
+                {
+                    TblTransaction tTrans = new TblTransaction();
+                    tTrans.CodeTransaction = pTCode;
+                    tTrans.CodeDoctor = pDoctor;
+                    tTrans.CodePatient = patientCompleteCode;
+                    tTrans.CodeTransaction = generateTransactionCode(patientCompleteCode);
+                    tTrans.DateRegistered = DateTime.Today;
+
+                    TblPatient tPatient = new TblPatient();
+                    if (txtPatientCode.Text == "")
+                    {
+                        tPatient.CodePatient = patientCompleteCode;
+                        tPatient.DateRegistered = DateTime.Today;
+                        tPatient.FirstName = pFName;
+                        tPatient.LastName = pLName;
+                        tPatient.Gender = pGender;
+                        tPatient.Address = pAddress;
+                        tPatient.Age = Convert.ToInt16(pAge);
+                        tPatient.Contact = pContact;
+
+                        //Search record if [Patient Code] exists
+
+                        var tryPatient = (from pQuery in uow.TblPatients where pQuery.CodePatient.Equals(patientCompleteCode) select pQuery).ToList();
+                        if (tryPatient.Count > 0)
+                        {
+                            MessageBox.Show("Patient already exists.", "Message");
+                        }
+                        else
+                        {
+                            uow.Add(tPatient);
+                        }
+
+                    }
+
+                    if (tTrans.Errors.Count == 0 && tPatient.Errors.Count == 0)
+                    {
+
+                        uow.Add(tTrans);
+                        uow.SaveChanges();
+                        MessageBox.Show("Added new patient.", "Success");
+                        clearText();
+                    }
+                }
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show("Error adding transaction: " + er.ToString());
+                throw;
+            }
+        }
+
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             try
@@ -101,19 +227,9 @@ namespace LaboratoryProject
                 var pAddress = txtAddress.Text.ToUpper();
                 var pAge = txtAge.Text.ToUpper();
                 var pGender = txtGender.Text.ToUpper();
-                var patientCompleteCode = "";
                 var pContact = txtContact.Text;
 
-                if (txtPatientCode.Text == "")
-                {
-                    Random r = new Random();
-                    int rand = r.Next(9999);
-                    patientCompleteCode = pFName.Substring(0, 3) + pLName.Substring(0, 3) + rand.ToString();
-                }
-                else
-                {
-                    patientCompleteCode = txtPatientCode.Text;
-                }
+                
                 using (var uow = StaticValues.lscon.CreateUnitOfWork())
                 {
                     TblTransaction tTrans = new TblTransaction();
@@ -172,6 +288,22 @@ namespace LaboratoryProject
             {
                 Random r = new Random();
                 int rand = r.Next(9999);
+                var transcode = seed + rand.ToString();
+                return transcode;
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show("Error generating transaction code: " + er.ToString());
+                throw;
+            }
+        }
+
+        private string generateXRAYCode(string seed)
+        {
+            try
+            {
+                Random r = new Random();
+                int rand = r.Next(99999);
                 var transcode = seed + rand.ToString();
                 return transcode;
             }
@@ -267,7 +399,7 @@ namespace LaboratoryProject
         {
             if (txtLABOther.Text == "")
             {
-
+                //do nothing
             }
             else
             {
@@ -349,6 +481,48 @@ namespace LaboratoryProject
         private void btnLABSubmit_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnXRAYSubmit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtAge.Text == "")
+                {
+                    txtAge.Text = "0";
+                }
+                using (var uow = StaticValues.lscon.CreateUnitOfWork())
+                {
+                    TblXRay tXray = new TblXRay();
+                    if (txtPatientCode.Text == "")
+                    {
+                        patientCodeGen();
+                        tXray.CodePatient = patientCompleteCode;
+                    }
+                    
+                    tXray.CodeXRay = generateXRAYCode("XR");
+                    tXray.FilmNo = xRayInfo().FilmNo;
+                    tXray.Findings = xRayInfo().Findings;
+                    tXray.Remarks = xRayInfo().Remarks;
+                    tXray.Radiologist = xRayInfo().Radiologist;
+                    tXray.Roentgenography = xRayInfo().Roentgenography;
+                    tXray.DateEncoded = DateTime.Now;
+                    tXray.DateXRay = xRayInfo().DatePerformed;
+
+                    if (tXray.Errors.Count == 0)
+                    {
+                        uow.Add(tXray);
+                        uow.SaveChanges();
+                        MessageBox.Show("XRay record saved.");
+                        addNewPatient();
+                    }
+
+                }
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show("Saving XRay error: Cause might be lack of Patient First and Last name. Error message: " + Environment.NewLine + er);
+            }
         }
 
     }

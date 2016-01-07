@@ -93,6 +93,10 @@
             this.btnLABSubmit = new System.Windows.Forms.Button();
             this.btnXRAYSubmit = new System.Windows.Forms.Button();
             this.btnULTRASubmit = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtULTRAImpression = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtULTRARadiologist = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -131,7 +135,6 @@
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
             this.helpToolStripMenuItem.Text = "Maintenance";
-            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // servicesToolStripMenuItem
             // 
@@ -165,9 +168,9 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(664, 687);
+            this.btnSubmit.Location = new System.Drawing.Point(525, 487);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(140, 30);
+            this.btnSubmit.Size = new System.Drawing.Size(257, 30);
             this.btnSubmit.TabIndex = 13;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -362,6 +365,10 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.txtULTRARadiologist);
+            this.groupBox4.Controls.Add(this.label18);
+            this.groupBox4.Controls.Add(this.txtULTRAImpression);
+            this.groupBox4.Controls.Add(this.label17);
             this.groupBox4.Controls.Add(this.btnULTRASubmit);
             this.groupBox4.Controls.Add(this.txtULTRAFindings);
             this.groupBox4.Controls.Add(this.label16);
@@ -374,16 +381,16 @@
             // 
             // txtULTRAFindings
             // 
-            this.txtULTRAFindings.Location = new System.Drawing.Point(6, 46);
+            this.txtULTRAFindings.Location = new System.Drawing.Point(57, 46);
             this.txtULTRAFindings.Multiline = true;
             this.txtULTRAFindings.Name = "txtULTRAFindings";
-            this.txtULTRAFindings.Size = new System.Drawing.Size(792, 162);
+            this.txtULTRAFindings.Size = new System.Drawing.Size(684, 162);
             this.txtULTRAFindings.TabIndex = 18;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(6, 23);
+            this.label16.Location = new System.Drawing.Point(53, 23);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(67, 20);
             this.label16.TabIndex = 17;
@@ -392,6 +399,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnNew);
+            this.groupBox1.Controls.Add(this.btnSubmit);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txtContact);
             this.groupBox1.Controls.Add(this.label8);
@@ -421,7 +429,7 @@
             // 
             // btnNew
             // 
-            this.btnNew.Location = new System.Drawing.Point(233, 364);
+            this.btnNew.Location = new System.Drawing.Point(246, 364);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(155, 30);
             this.btnNew.TabIndex = 22;
@@ -432,7 +440,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(69, 221);
+            this.label9.Location = new System.Drawing.Point(19, 221);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(63, 20);
             this.label9.TabIndex = 21;
@@ -440,15 +448,15 @@
             // 
             // txtContact
             // 
-            this.txtContact.Location = new System.Drawing.Point(71, 244);
+            this.txtContact.Location = new System.Drawing.Point(19, 244);
             this.txtContact.Name = "txtContact";
-            this.txtContact.Size = new System.Drawing.Size(317, 27);
+            this.txtContact.Size = new System.Drawing.Size(382, 27);
             this.txtContact.TabIndex = 20;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(131, 331);
+            this.label8.Location = new System.Drawing.Point(144, 331);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(96, 20);
             this.label8.TabIndex = 19;
@@ -456,7 +464,7 @@
             // 
             // txtPatientCode
             // 
-            this.txtPatientCode.Location = new System.Drawing.Point(233, 331);
+            this.txtPatientCode.Location = new System.Drawing.Point(246, 331);
             this.txtPatientCode.Name = "txtPatientCode";
             this.txtPatientCode.ReadOnly = true;
             this.txtPatientCode.Size = new System.Drawing.Size(155, 27);
@@ -465,7 +473,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(473, 20);
+            this.label1.Location = new System.Drawing.Point(521, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(114, 20);
             this.label1.TabIndex = 18;
@@ -473,14 +481,14 @@
             // 
             // txtPatientSearch
             // 
-            this.txtPatientSearch.Location = new System.Drawing.Point(477, 43);
+            this.txtPatientSearch.Location = new System.Drawing.Point(525, 43);
             this.txtPatientSearch.Name = "txtPatientSearch";
             this.txtPatientSearch.Size = new System.Drawing.Size(257, 27);
             this.txtPatientSearch.TabIndex = 17;
             // 
             // btnSearchExisting
             // 
-            this.btnSearchExisting.Location = new System.Drawing.Point(578, 76);
+            this.btnSearchExisting.Location = new System.Drawing.Point(626, 76);
             this.btnSearchExisting.Name = "btnSearchExisting";
             this.btnSearchExisting.Size = new System.Drawing.Size(156, 30);
             this.btnSearchExisting.TabIndex = 16;
@@ -492,7 +500,7 @@
             // 
             this.listExistingPatient.FormattingEnabled = true;
             this.listExistingPatient.ItemHeight = 20;
-            this.listExistingPatient.Location = new System.Drawing.Point(477, 112);
+            this.listExistingPatient.Location = new System.Drawing.Point(525, 112);
             this.listExistingPatient.Name = "listExistingPatient";
             this.listExistingPatient.Size = new System.Drawing.Size(257, 284);
             this.listExistingPatient.TabIndex = 15;
@@ -501,7 +509,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(229, 23);
+            this.label7.Location = new System.Drawing.Point(194, 23);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(83, 20);
             this.label7.TabIndex = 12;
@@ -510,7 +518,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(67, 23);
+            this.label6.Location = new System.Drawing.Point(19, 23);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(82, 20);
             this.label6.TabIndex = 11;
@@ -521,17 +529,17 @@
             this.txtDoctor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtDoctor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.txtDoctor.FormattingEnabled = true;
-            this.txtDoctor.Location = new System.Drawing.Point(71, 297);
+            this.txtDoctor.Location = new System.Drawing.Point(19, 297);
             this.txtDoctor.Name = "txtDoctor";
-            this.txtDoctor.Size = new System.Drawing.Size(317, 28);
+            this.txtDoctor.Size = new System.Drawing.Size(382, 28);
             this.txtDoctor.TabIndex = 10;
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(71, 152);
+            this.txtAddress.Location = new System.Drawing.Point(19, 152);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(317, 66);
+            this.txtAddress.Size = new System.Drawing.Size(382, 66);
             this.txtAddress.TabIndex = 9;
             // 
             // txtGender
@@ -541,14 +549,14 @@
             this.txtGender.Items.AddRange(new object[] {
             "MALE",
             "FEMALE"});
-            this.txtGender.Location = new System.Drawing.Point(233, 98);
+            this.txtGender.Location = new System.Drawing.Point(246, 96);
             this.txtGender.Name = "txtGender";
             this.txtGender.Size = new System.Drawing.Size(155, 28);
             this.txtGender.TabIndex = 8;
             // 
             // txtAge
             // 
-            this.txtAge.Location = new System.Drawing.Point(71, 99);
+            this.txtAge.Location = new System.Drawing.Point(19, 96);
             this.txtAge.Mask = "999";
             this.txtAge.Name = "txtAge";
             this.txtAge.PromptChar = '-';
@@ -557,14 +565,14 @@
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(233, 46);
+            this.txtFirstName.Location = new System.Drawing.Point(181, 43);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(155, 27);
+            this.txtFirstName.Size = new System.Drawing.Size(220, 27);
             this.txtFirstName.TabIndex = 6;
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(71, 46);
+            this.txtLastName.Location = new System.Drawing.Point(19, 43);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(156, 27);
             this.txtLastName.TabIndex = 5;
@@ -572,7 +580,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(67, 274);
+            this.label5.Location = new System.Drawing.Point(19, 274);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 20);
             this.label5.TabIndex = 4;
@@ -581,7 +589,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(67, 129);
+            this.label4.Location = new System.Drawing.Point(19, 129);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 20);
             this.label4.TabIndex = 3;
@@ -590,7 +598,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(229, 76);
+            this.label3.Location = new System.Drawing.Point(242, 73);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 20);
             this.label3.TabIndex = 2;
@@ -599,7 +607,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(67, 76);
+            this.label2.Location = new System.Drawing.Point(19, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 20);
             this.label2.TabIndex = 1;
@@ -620,7 +628,6 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Controls.Add(this.btnSubmit);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -781,6 +788,7 @@
             this.btnXRAYSubmit.TabIndex = 74;
             this.btnXRAYSubmit.Text = "Submit";
             this.btnXRAYSubmit.UseVisualStyleBackColor = true;
+            this.btnXRAYSubmit.Click += new System.EventHandler(this.btnXRAYSubmit_Click);
             // 
             // btnULTRASubmit
             // 
@@ -790,6 +798,39 @@
             this.btnULTRASubmit.TabIndex = 74;
             this.btnULTRASubmit.Text = "Submit";
             this.btnULTRASubmit.UseVisualStyleBackColor = true;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(53, 211);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(84, 20);
+            this.label17.TabIndex = 75;
+            this.label17.Text = "Impression:";
+            // 
+            // txtULTRAImpression
+            // 
+            this.txtULTRAImpression.Location = new System.Drawing.Point(57, 234);
+            this.txtULTRAImpression.Multiline = true;
+            this.txtULTRAImpression.Name = "txtULTRAImpression";
+            this.txtULTRAImpression.Size = new System.Drawing.Size(368, 68);
+            this.txtULTRAImpression.TabIndex = 76;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(53, 305);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(165, 20);
+            this.label18.TabIndex = 77;
+            this.label18.Text = "Radiologist/Sonologist:";
+            // 
+            // txtULTRARadiologist
+            // 
+            this.txtULTRARadiologist.Location = new System.Drawing.Point(57, 328);
+            this.txtULTRARadiologist.Name = "txtULTRARadiologist";
+            this.txtULTRARadiologist.Size = new System.Drawing.Size(368, 27);
+            this.txtULTRARadiologist.TabIndex = 78;
             // 
             // formMainSelection
             // 
@@ -895,5 +936,9 @@
         private System.Windows.Forms.Button btnLABSubmit;
         private System.Windows.Forms.Button btnXRAYSubmit;
         private System.Windows.Forms.Button btnULTRASubmit;
+        private System.Windows.Forms.TextBox txtULTRARadiologist;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txtULTRAImpression;
+        private System.Windows.Forms.Label label17;
     }
 }

@@ -132,5 +132,111 @@
         <entityProperty name="TotalAmount" dataType="Decimal" isNullable="true" privateSetter="false" />
       </entityProperties>
     </entity>
+    <entity name="TblLaboratory" identityType="Int64" cacheExpiry="0">
+      <entityProperties>
+        <entityProperty name="CodePatient" isNullable="true" privateSetter="false">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="50" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="DateLaboratory" isNullable="true" privateSetter="false">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="50" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="Request" isNullable="true" privateSetter="false">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="500" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="Total" dataType="Decimal" isNullable="true" privateSetter="false" />
+        <entityProperty name="CodeLaboratory" isNullable="true" privateSetter="false">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="50" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="DateEncoded" dataType="DateTime" isNullable="true" privateSetter="false" />
+      </entityProperties>
+    </entity>
+    <entity name="TblXRay" identityType="Int64" cacheExpiry="0">
+      <entityProperties>
+        <entityProperty name="CodePatient" isNullable="true" privateSetter="false">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="50" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="DateXRay" isNullable="true" privateSetter="false">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="50" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="Roentgenography" isNullable="true" privateSetter="false">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="50" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="FilmNo" isNullable="true" privateSetter="false">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="50" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="Findings" isNullable="true" privateSetter="false">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="600" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="Remarks" isNullable="true" privateSetter="false">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="150" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="Radiologist" isNullable="true" privateSetter="false">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="100" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="CodeXRay" isNullable="true" privateSetter="false">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="50" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="DateEncoded" dataType="DateTime" isNullable="true" privateSetter="false" />
+      </entityProperties>
+    </entity>
+    <entity name="TblUltrasound" identityType="Int64" cacheExpiry="0">
+      <entityProperties>
+        <entityProperty name="CodePatient" isNullable="true" privateSetter="false">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="50" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="DateUltrasound" isNullable="true" privateSetter="false">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="50" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="Findings" isNullable="true" privateSetter="false">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="600" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="Impression" isNullable="true" privateSetter="false">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="150" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="Radiologist" isNullable="true" privateSetter="false">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="100" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="CodeUltrasound" isNullable="true" privateSetter="false">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="50" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="DateEncoded" dataType="DateTime" isNullable="true" privateSetter="false" />
+      </entityProperties>
+    </entity>
   </entities>
 </model>

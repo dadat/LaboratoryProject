@@ -1,35 +1,53 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<minimalLanguageDiagram dslVersion="1.1.0.0" absoluteBounds="0, 0, 13.5, 8.5" name="LSMLaboratory">
+<minimalLanguageDiagram dslVersion="1.1.0.0" absoluteBounds="0, 0, 11, 8.875" name="LSMLaboratory">
   <modelMoniker name="/LSMLaboratory" />
   <nestedChildShapes>
-    <entityShape Id="f77bc986-300a-4c96-a04c-4de53c795959" absoluteBounds="2.75, 1.5, 1.5, 1.4715071614583333">
+    <entityShape Id="f77bc986-300a-4c96-a04c-4de53c795959" absoluteBounds="0.75, 0.75, 1.5, 1.4715071614583337">
       <entityMoniker name="/LSMLaboratory/TblDoctor" />
       <nestedChildShapes>
-        <elementListCompartment Id="408b952c-c391-49e6-b413-ee72e58be858" absoluteBounds="2.765, 1.9100000000000001, 1.4700000000000002, 0.96150716145833326" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="408b952c-c391-49e6-b413-ee72e58be858" absoluteBounds="0.76500000000000012, 1.1600000000000001, 1.4700000000000002, 0.96150716145833326" name="Properties" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </entityShape>
-    <entityShape Id="e98c1273-3b4f-4aff-85ba-7d827cf0648e" absoluteBounds="5, 2.25, 1.5, 1.4715071614583333">
+    <entityShape Id="e98c1273-3b4f-4aff-85ba-7d827cf0648e" absoluteBounds="3.75, 0.75, 1.5, 1.4715071614583337">
       <entityMoniker name="/LSMLaboratory/TblUser" />
       <nestedChildShapes>
-        <elementListCompartment Id="3bb32c39-f853-4d94-ba4f-c87c141ec37e" absoluteBounds="5.0150000000000006, 2.66, 1.4700000000000002, 0.96150716145833326" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="3bb32c39-f853-4d94-ba4f-c87c141ec37e" absoluteBounds="3.7650000000000006, 1.1600000000000001, 1.4700000000000002, 0.96150716145833326" name="Properties" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </entityShape>
-    <entityShape Id="0b155e0b-a92c-4cd1-b217-2f1d5708439f" absoluteBounds="7.25, 3, 1.5, 2.240712890625">
+    <entityShape Id="0b155e0b-a92c-4cd1-b217-2f1d5708439f" absoluteBounds="0.75, 3.75, 1.5, 2.240712890625">
       <entityMoniker name="/LSMLaboratory/TblPatient" />
       <nestedChildShapes>
-        <elementListCompartment Id="31547c35-4ee8-4096-8cf0-f6ae9fb7c011" absoluteBounds="7.2650000000000006, 3.41, 1.4700000000000002, 1.730712890625" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="31547c35-4ee8-4096-8cf0-f6ae9fb7c011" absoluteBounds="0.76500000000000057, 4.16, 1.4700000000000002, 1.730712890625" name="Properties" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </entityShape>
-    <entityShape Id="1a127280-1252-41b2-8fbb-a27b582e4f10" absoluteBounds="9.5, 3.75, 1.5, 1.6638085937500002">
+    <entityShape Id="1a127280-1252-41b2-8fbb-a27b582e4f10" absoluteBounds="3.75, 3.75, 1.5, 1.6638085937499998">
       <entityMoniker name="/LSMLaboratory/TblService" />
       <nestedChildShapes>
-        <elementListCompartment Id="9cbe1d08-5ad7-4fc1-bcfc-dc4ec3df829e" absoluteBounds="9.515, 4.16, 1.4700000000000002, 1.15380859375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9cbe1d08-5ad7-4fc1-bcfc-dc4ec3df829e" absoluteBounds="3.7650000000000006, 4.16, 1.4700000000000002, 1.15380859375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </entityShape>
-    <entityShape Id="6665b3b1-565f-4dbe-8f8b-d0750837321f" absoluteBounds="11.75, 4.5, 1.5, 1.6638085937500002">
+    <entityShape Id="6665b3b1-565f-4dbe-8f8b-d0750837321f" absoluteBounds="6.75, 0.75, 1.5, 1.6638085937499998">
       <entityMoniker name="/LSMLaboratory/TblTransaction" />
       <nestedChildShapes>
-        <elementListCompartment Id="1462a55e-3ec2-4b00-8b39-6c0b8d7204d8" absoluteBounds="11.765, 4.91, 1.4700000000000002, 1.15380859375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1462a55e-3ec2-4b00-8b39-6c0b8d7204d8" absoluteBounds="6.7650000000000006, 1.1600000000000001, 1.4700000000000002, 1.15380859375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </entityShape>
+    <entityShape Id="393e2e6e-c7f8-4134-92ab-4ae9083ade52" absoluteBounds="0.75, 6.75, 1.5, 1.6638085937499998">
+      <entityMoniker name="/LSMLaboratory/TblLaboratory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5d3f4e97-afd0-414b-b73a-6e2f36a05f1c" absoluteBounds="0.76499999999999968, 7.16, 1.4700000000000002, 1.15380859375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </entityShape>
+    <entityShape Id="7ed3bed9-8f90-4c2a-a7a9-770baf79af9b" absoluteBounds="6.75, 3.75, 1.5, 2.240712890625">
+      <entityMoniker name="/LSMLaboratory/TblXRay" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c6c841d2-e8d0-4730-9478-5276b0ac3686" absoluteBounds="6.7650000000000006, 4.16, 1.4700000000000002, 1.730712890625" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </entityShape>
+    <entityShape Id="0ad0a622-7149-4714-95f0-59f8fbdc25d2" absoluteBounds="3.75, 6.75, 1.5, 1.8561100260416659">
+      <entityMoniker name="/LSMLaboratory/TblUltrasound" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6c3ac4cb-1577-4ef0-9948-5c1eff47b5f0" absoluteBounds="3.7650000000000006, 7.16, 1.4700000000000002, 1.3461100260416665" name="Properties" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </entityShape>
   </nestedChildShapes>

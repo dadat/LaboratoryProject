@@ -14,4 +14,3 @@ c:\users\david\documents\visual studio 2013\Projects\LaboratoryProject\Laborator
 c:\users\david\documents\visual studio 2013\Projects\LaboratoryProject\LaboratoryProject\bin\Debug\Mindscape.LightSpeed.Linq.xml
 C:\Users\David\documents\visual studio 2013\Projects\LaboratoryProject\LaboratoryProject\obj\Debug\LaboratoryProject.FormServicesMaint.resources
 C:\Users\David\documents\visual studio 2013\Projects\LaboratoryProject\LaboratoryProject\obj\Debug\LaboratoryProject.FormDocPatient.resources
-C:\Users\David\documents\visual studio 2013\Projects\LaboratoryProject\LaboratoryProject\obj\Debug\LaboratoryProject.csprojResolveAssemblyReference.cache

@@ -32,7 +32,6 @@ namespace LaboratoryProject
             catch (Exception er)
             {
                 MessageBox.Show(er.ToString());
-                throw;
             }
         }
 
