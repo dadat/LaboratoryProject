@@ -38,11 +38,20 @@
             this.userControlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtLABDate = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.btnLABSubmit = new System.Windows.Forms.Button();
+            this.checkedListBoxLAB5 = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBoxLAB4 = new System.Windows.Forms.CheckedListBox();
+            this.listTestLAB = new System.Windows.Forms.ListBox();
+            this.checkedListBoxLAB3 = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBoxLAB2 = new System.Windows.Forms.CheckedListBox();
             this.btnXRAYTest = new System.Windows.Forms.Button();
             this.checkedListBoxLAB1 = new System.Windows.Forms.CheckedListBox();
             this.txtLABOther = new System.Windows.Forms.TextBox();
             this.checkBoxLABOther = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnXRAYSubmit = new System.Windows.Forms.Button();
             this.txtXRAYRemarks = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtXRAYDateTimePerformed = new System.Windows.Forms.TextBox();
@@ -56,6 +65,11 @@
             this.txtXRAYFindings = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtULTRARadiologist = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtULTRAImpression = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.btnULTRASubmit = new System.Windows.Forms.Button();
             this.txtULTRAFindings = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -85,18 +99,8 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.checkedListBoxLAB2 = new System.Windows.Forms.CheckedListBox();
-            this.checkedListBoxLAB3 = new System.Windows.Forms.CheckedListBox();
-            this.listTestLAB = new System.Windows.Forms.ListBox();
-            this.checkedListBoxLAB4 = new System.Windows.Forms.CheckedListBox();
-            this.checkedListBoxLAB5 = new System.Windows.Forms.CheckedListBox();
-            this.btnLABSubmit = new System.Windows.Forms.Button();
-            this.btnXRAYSubmit = new System.Windows.Forms.Button();
-            this.btnULTRASubmit = new System.Windows.Forms.Button();
-            this.label17 = new System.Windows.Forms.Label();
-            this.txtULTRAImpression = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtULTRARadiologist = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtLABTotal = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -178,6 +182,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtLABTotal);
+            this.groupBox2.Controls.Add(this.label20);
+            this.groupBox2.Controls.Add(this.txtLABDate);
+            this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.btnLABSubmit);
             this.groupBox2.Controls.Add(this.checkedListBoxLAB5);
             this.groupBox2.Controls.Add(this.checkedListBoxLAB4);
@@ -194,6 +202,135 @@
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "LAB";
+            // 
+            // txtLABDate
+            // 
+            this.txtLABDate.Location = new System.Drawing.Point(670, 613);
+            this.txtLABDate.Name = "txtLABDate";
+            this.txtLABDate.Size = new System.Drawing.Size(123, 27);
+            this.txtLABDate.TabIndex = 75;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(620, 616);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(44, 20);
+            this.label19.TabIndex = 74;
+            this.label19.Text = "Date:";
+            // 
+            // btnLABSubmit
+            // 
+            this.btnLABSubmit.Location = new System.Drawing.Point(587, 679);
+            this.btnLABSubmit.Name = "btnLABSubmit";
+            this.btnLABSubmit.Size = new System.Drawing.Size(206, 32);
+            this.btnLABSubmit.TabIndex = 73;
+            this.btnLABSubmit.Text = "Submit";
+            this.btnLABSubmit.UseVisualStyleBackColor = true;
+            this.btnLABSubmit.Click += new System.EventHandler(this.btnLABSubmit_Click);
+            // 
+            // checkedListBoxLAB5
+            // 
+            this.checkedListBoxLAB5.FormattingEnabled = true;
+            this.checkedListBoxLAB5.Items.AddRange(new object[] {
+            "Pregnancy Test (SERUM)",
+            "Pregnancy Test (URINE)",
+            "RPR",
+            "CRP",
+            "ASO Titer",
+            "RF",
+            "ANA / SLE",
+            "Widal Test",
+            "Salmonela typhi IgG / IgM",
+            "HBs Ag (quali)",
+            "C3",
+            "HbA1 C",
+            "NSI 1g6 IgM (Dengue Rapid Test)",
+            "OGTT 100g",
+            "OGTT 75g",
+            "OGCT 50g"});
+            this.checkedListBoxLAB5.Location = new System.Drawing.Point(271, 267);
+            this.checkedListBoxLAB5.Name = "checkedListBoxLAB5";
+            this.checkedListBoxLAB5.Size = new System.Drawing.Size(245, 400);
+            this.checkedListBoxLAB5.TabIndex = 72;
+            this.checkedListBoxLAB5.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxLAB5_SelectedIndexChanged);
+            // 
+            // checkedListBoxLAB4
+            // 
+            this.checkedListBoxLAB4.FormattingEnabled = true;
+            this.checkedListBoxLAB4.Items.AddRange(new object[] {
+            "FBS",
+            "RBS",
+            "BUN",
+            "Creatinine",
+            "Uric Acid",
+            "Cholesterol",
+            "HDL/LDL",
+            "Triglycerides",
+            "Lipid Profile",
+            "Bilirubin (B1, B2)",
+            "TPAG",
+            "Total Protein",
+            "Albumin",
+            "SGPT",
+            "SGOT",
+            "Alkaline Phosphatase",
+            "Serum Sodium",
+            "Serum Potassium"});
+            this.checkedListBoxLAB4.Location = new System.Drawing.Point(14, 267);
+            this.checkedListBoxLAB4.Name = "checkedListBoxLAB4";
+            this.checkedListBoxLAB4.Size = new System.Drawing.Size(186, 400);
+            this.checkedListBoxLAB4.TabIndex = 71;
+            this.checkedListBoxLAB4.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxLAB4_SelectedIndexChanged);
+            // 
+            // listTestLAB
+            // 
+            this.listTestLAB.FormattingEnabled = true;
+            this.listTestLAB.ItemHeight = 20;
+            this.listTestLAB.Location = new System.Drawing.Point(587, 403);
+            this.listTestLAB.Name = "listTestLAB";
+            this.listTestLAB.Size = new System.Drawing.Size(206, 204);
+            this.listTestLAB.TabIndex = 70;
+            // 
+            // checkedListBoxLAB3
+            // 
+            this.checkedListBoxLAB3.FormattingEnabled = true;
+            this.checkedListBoxLAB3.Items.AddRange(new object[] {
+            "T3",
+            "T4",
+            "TSH",
+            "Ferritin",
+            "HAV IgM",
+            "HBs Ag (quanti)",
+            "Anti - HBs (quanti)",
+            "HBe Ag",
+            "Anti - HBe",
+            "TPSA",
+            "PROTIME"});
+            this.checkedListBoxLAB3.Location = new System.Drawing.Point(587, 19);
+            this.checkedListBoxLAB3.Name = "checkedListBoxLAB3";
+            this.checkedListBoxLAB3.Size = new System.Drawing.Size(206, 246);
+            this.checkedListBoxLAB3.TabIndex = 69;
+            this.checkedListBoxLAB3.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxLAB3_SelectedIndexChanged);
+            // 
+            // checkedListBoxLAB2
+            // 
+            this.checkedListBoxLAB2.FormattingEnabled = true;
+            this.checkedListBoxLAB2.Items.AddRange(new object[] {
+            "Serum Chloride",
+            "Serum Calcium",
+            "Routine Urinalysis",
+            "Routine Fecalysis",
+            "Occult Blood",
+            "AFB Stain",
+            "Gram Stain",
+            "KOH Smear",
+            "PAP Smear"});
+            this.checkedListBoxLAB2.Location = new System.Drawing.Point(271, 19);
+            this.checkedListBoxLAB2.Name = "checkedListBoxLAB2";
+            this.checkedListBoxLAB2.Size = new System.Drawing.Size(245, 202);
+            this.checkedListBoxLAB2.TabIndex = 68;
+            this.checkedListBoxLAB2.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxLAB2_SelectedIndexChanged);
             // 
             // btnXRAYTest
             // 
@@ -264,6 +401,16 @@
             this.groupBox3.TabIndex = 15;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "XRAY";
+            // 
+            // btnXRAYSubmit
+            // 
+            this.btnXRAYSubmit.Location = new System.Drawing.Point(587, 679);
+            this.btnXRAYSubmit.Name = "btnXRAYSubmit";
+            this.btnXRAYSubmit.Size = new System.Drawing.Size(206, 32);
+            this.btnXRAYSubmit.TabIndex = 74;
+            this.btnXRAYSubmit.Text = "Submit";
+            this.btnXRAYSubmit.UseVisualStyleBackColor = true;
+            this.btnXRAYSubmit.Click += new System.EventHandler(this.btnXRAYSubmit_Click);
             // 
             // txtXRAYRemarks
             // 
@@ -379,6 +526,48 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "ULTRASOUND";
             // 
+            // txtULTRARadiologist
+            // 
+            this.txtULTRARadiologist.Location = new System.Drawing.Point(57, 328);
+            this.txtULTRARadiologist.Name = "txtULTRARadiologist";
+            this.txtULTRARadiologist.Size = new System.Drawing.Size(368, 27);
+            this.txtULTRARadiologist.TabIndex = 78;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(53, 305);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(165, 20);
+            this.label18.TabIndex = 77;
+            this.label18.Text = "Radiologist/Sonologist:";
+            // 
+            // txtULTRAImpression
+            // 
+            this.txtULTRAImpression.Location = new System.Drawing.Point(57, 234);
+            this.txtULTRAImpression.Multiline = true;
+            this.txtULTRAImpression.Name = "txtULTRAImpression";
+            this.txtULTRAImpression.Size = new System.Drawing.Size(368, 68);
+            this.txtULTRAImpression.TabIndex = 76;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(53, 211);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(84, 20);
+            this.label17.TabIndex = 75;
+            this.label17.Text = "Impression:";
+            // 
+            // btnULTRASubmit
+            // 
+            this.btnULTRASubmit.Location = new System.Drawing.Point(587, 679);
+            this.btnULTRASubmit.Name = "btnULTRASubmit";
+            this.btnULTRASubmit.Size = new System.Drawing.Size(206, 32);
+            this.btnULTRASubmit.TabIndex = 74;
+            this.btnULTRASubmit.Text = "Submit";
+            this.btnULTRASubmit.UseVisualStyleBackColor = true;
+            // 
             // txtULTRAFindings
             // 
             this.txtULTRAFindings.Location = new System.Drawing.Point(57, 46);
@@ -488,9 +677,9 @@
             // 
             // btnSearchExisting
             // 
-            this.btnSearchExisting.Location = new System.Drawing.Point(626, 76);
+            this.btnSearchExisting.Location = new System.Drawing.Point(525, 76);
             this.btnSearchExisting.Name = "btnSearchExisting";
-            this.btnSearchExisting.Size = new System.Drawing.Size(156, 30);
+            this.btnSearchExisting.Size = new System.Drawing.Size(257, 30);
             this.btnSearchExisting.TabIndex = 16;
             this.btnSearchExisting.Text = "Search by Last Name";
             this.btnSearchExisting.UseVisualStyleBackColor = true;
@@ -667,170 +856,21 @@
             this.tabPage4.Text = "ULTRASOUND";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // checkedListBoxLAB2
+            // label20
             // 
-            this.checkedListBoxLAB2.FormattingEnabled = true;
-            this.checkedListBoxLAB2.Items.AddRange(new object[] {
-            "Serum Chloride",
-            "Serum Calcium",
-            "Routine Urinalysis",
-            "Routine Fecalysis",
-            "Occult Blood",
-            "AFB Stain",
-            "Gram Stain",
-            "KOH Smear",
-            "PAP Smear"});
-            this.checkedListBoxLAB2.Location = new System.Drawing.Point(271, 19);
-            this.checkedListBoxLAB2.Name = "checkedListBoxLAB2";
-            this.checkedListBoxLAB2.Size = new System.Drawing.Size(245, 202);
-            this.checkedListBoxLAB2.TabIndex = 68;
-            this.checkedListBoxLAB2.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxLAB2_SelectedIndexChanged);
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(619, 646);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(45, 20);
+            this.label20.TabIndex = 76;
+            this.label20.Text = "Total:";
             // 
-            // checkedListBoxLAB3
+            // txtLABTotal
             // 
-            this.checkedListBoxLAB3.FormattingEnabled = true;
-            this.checkedListBoxLAB3.Items.AddRange(new object[] {
-            "T3",
-            "T4",
-            "TSH",
-            "Ferritin",
-            "HAV IgM",
-            "HBs Ag (quanti)",
-            "Anti - HBs (quanti)",
-            "HBe Ag",
-            "Anti - HBe",
-            "TPSA",
-            "PROTIME"});
-            this.checkedListBoxLAB3.Location = new System.Drawing.Point(587, 19);
-            this.checkedListBoxLAB3.Name = "checkedListBoxLAB3";
-            this.checkedListBoxLAB3.Size = new System.Drawing.Size(206, 246);
-            this.checkedListBoxLAB3.TabIndex = 69;
-            this.checkedListBoxLAB3.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxLAB3_SelectedIndexChanged);
-            // 
-            // listTestLAB
-            // 
-            this.listTestLAB.FormattingEnabled = true;
-            this.listTestLAB.ItemHeight = 20;
-            this.listTestLAB.Location = new System.Drawing.Point(587, 403);
-            this.listTestLAB.Name = "listTestLAB";
-            this.listTestLAB.Size = new System.Drawing.Size(206, 264);
-            this.listTestLAB.TabIndex = 70;
-            // 
-            // checkedListBoxLAB4
-            // 
-            this.checkedListBoxLAB4.FormattingEnabled = true;
-            this.checkedListBoxLAB4.Items.AddRange(new object[] {
-            "FBS",
-            "RBS",
-            "BUN",
-            "Creatinine",
-            "Uric Acid",
-            "Cholesterol",
-            "HDL/LDL",
-            "Triglycerides",
-            "Lipid Profile",
-            "Bilirubin (B1, B2)",
-            "TPAG",
-            "Total Protein",
-            "Albumin",
-            "SGPT",
-            "SGOT",
-            "Alkaline Phosphatase",
-            "Serum Sodium",
-            "Serum Potassium"});
-            this.checkedListBoxLAB4.Location = new System.Drawing.Point(14, 267);
-            this.checkedListBoxLAB4.Name = "checkedListBoxLAB4";
-            this.checkedListBoxLAB4.Size = new System.Drawing.Size(186, 400);
-            this.checkedListBoxLAB4.TabIndex = 71;
-            this.checkedListBoxLAB4.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxLAB4_SelectedIndexChanged);
-            // 
-            // checkedListBoxLAB5
-            // 
-            this.checkedListBoxLAB5.FormattingEnabled = true;
-            this.checkedListBoxLAB5.Items.AddRange(new object[] {
-            "Pregnancy Test (SERUM)",
-            "Pregnancy Test (URINE)",
-            "RPR",
-            "CRP",
-            "ASO Titer",
-            "RF",
-            "ANA / SLE",
-            "Widal Test",
-            "Salmonela typhi IgG / IgM",
-            "HBs Ag (quali)",
-            "C3",
-            "HbA1 C",
-            "NSI 1g6 IgM (Dengue Rapid Test)",
-            "OGTT 100g",
-            "OGTT 75g",
-            "OGCT 50g"});
-            this.checkedListBoxLAB5.Location = new System.Drawing.Point(271, 267);
-            this.checkedListBoxLAB5.Name = "checkedListBoxLAB5";
-            this.checkedListBoxLAB5.Size = new System.Drawing.Size(245, 400);
-            this.checkedListBoxLAB5.TabIndex = 72;
-            this.checkedListBoxLAB5.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxLAB5_SelectedIndexChanged);
-            // 
-            // btnLABSubmit
-            // 
-            this.btnLABSubmit.Location = new System.Drawing.Point(587, 679);
-            this.btnLABSubmit.Name = "btnLABSubmit";
-            this.btnLABSubmit.Size = new System.Drawing.Size(206, 32);
-            this.btnLABSubmit.TabIndex = 73;
-            this.btnLABSubmit.Text = "Submit";
-            this.btnLABSubmit.UseVisualStyleBackColor = true;
-            this.btnLABSubmit.Click += new System.EventHandler(this.btnLABSubmit_Click);
-            // 
-            // btnXRAYSubmit
-            // 
-            this.btnXRAYSubmit.Location = new System.Drawing.Point(587, 679);
-            this.btnXRAYSubmit.Name = "btnXRAYSubmit";
-            this.btnXRAYSubmit.Size = new System.Drawing.Size(206, 32);
-            this.btnXRAYSubmit.TabIndex = 74;
-            this.btnXRAYSubmit.Text = "Submit";
-            this.btnXRAYSubmit.UseVisualStyleBackColor = true;
-            this.btnXRAYSubmit.Click += new System.EventHandler(this.btnXRAYSubmit_Click);
-            // 
-            // btnULTRASubmit
-            // 
-            this.btnULTRASubmit.Location = new System.Drawing.Point(587, 679);
-            this.btnULTRASubmit.Name = "btnULTRASubmit";
-            this.btnULTRASubmit.Size = new System.Drawing.Size(206, 32);
-            this.btnULTRASubmit.TabIndex = 74;
-            this.btnULTRASubmit.Text = "Submit";
-            this.btnULTRASubmit.UseVisualStyleBackColor = true;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(53, 211);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(84, 20);
-            this.label17.TabIndex = 75;
-            this.label17.Text = "Impression:";
-            // 
-            // txtULTRAImpression
-            // 
-            this.txtULTRAImpression.Location = new System.Drawing.Point(57, 234);
-            this.txtULTRAImpression.Multiline = true;
-            this.txtULTRAImpression.Name = "txtULTRAImpression";
-            this.txtULTRAImpression.Size = new System.Drawing.Size(368, 68);
-            this.txtULTRAImpression.TabIndex = 76;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(53, 305);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(165, 20);
-            this.label18.TabIndex = 77;
-            this.label18.Text = "Radiologist/Sonologist:";
-            // 
-            // txtULTRARadiologist
-            // 
-            this.txtULTRARadiologist.Location = new System.Drawing.Point(57, 328);
-            this.txtULTRARadiologist.Name = "txtULTRARadiologist";
-            this.txtULTRARadiologist.Size = new System.Drawing.Size(368, 27);
-            this.txtULTRARadiologist.TabIndex = 78;
+            this.txtLABTotal.Location = new System.Drawing.Point(670, 646);
+            this.txtLABTotal.Name = "txtLABTotal";
+            this.txtLABTotal.Size = new System.Drawing.Size(123, 27);
+            this.txtLABTotal.TabIndex = 77;
             // 
             // formMainSelection
             // 
@@ -940,5 +980,9 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtULTRAImpression;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txtLABDate;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox txtLABTotal;
+        private System.Windows.Forms.Label label20;
     }
 }

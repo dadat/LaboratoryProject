@@ -141,17 +141,22 @@ namespace LaboratoryProject
             Show();
         }
 
+        private string pCodeTemp()
+        {
+            return patientCompleteCode;
+        }
+
         private void addNewPatient()
         {
             if (txtPatientCode.Text != "")
             {
                 return;
             }
-            if (txtAge.Text == "")
-            {
-                MessageBox.Show("Please input age.");
-                return;
-            }
+            //if (txtAge.Text == "")
+            //{
+            //    MessageBox.Show("Please input age.");
+            //    return;
+            //}
             try
             {
                 var pFName = txtFirstName.Text.ToUpper();
@@ -159,7 +164,17 @@ namespace LaboratoryProject
                 var pTCode = "GENERATE CODE HERE";
                 var pDoctor = txtDoctor.Text.Split(' ').Last();
                 var pAddress = txtAddress.Text.ToUpper();
-                var pAge = txtAge.Text.ToUpper();
+                var pAge = "";
+
+                if (txtAge.Text == "")
+                {
+                    pAge = "0";
+                }
+                else
+                {
+                    pAge = txtAge.Text.ToUpper();
+                }
+
                 var pGender = txtGender.Text.ToUpper();
                 var pContact = txtContact.Text;
 
@@ -299,6 +314,22 @@ namespace LaboratoryProject
         }
 
         private string generateXRAYCode(string seed)
+        {
+            try
+            {
+                Random r = new Random();
+                int rand = r.Next(99999);
+                var transcode = seed + rand.ToString();
+                return transcode;
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show("Error generating transaction code: " + er.ToString());
+                throw;
+            }
+        }
+
+        private string generateLABCode(string seed)
         {
             try
             {
@@ -480,7 +511,112 @@ namespace LaboratoryProject
 
         private void btnLABSubmit_Click(object sender, EventArgs e)
         {
+            try
+            {
+                var pTextFirstname = "";
+                var pTextLastname = "";
+                var pAge = "";
 
+                pTextFirstname = txtFirstName.Text;
+                pTextLastname = txtLastName.Text;
+                pAge = txtAge.Text;
+                if (pTextLastname == "" || pAge == "" || pTextFirstname == "")
+                {
+                    DialogResult dialogResult = MessageBox.Show("Patient details incomplete, continue saving?", "Warning", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        patientCodeGen();
+                        addNewPatient();
+                        if (patientCompleteCode == "")
+                        {
+                            MessageBox.Show("Input Patient Details");
+                            return;
+                        }
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+                        return;
+                    }
+                }
+                else
+                {
+                    patientCodeGen();
+                    addNewPatient();
+                }
+
+                string request = "";
+                decimal labPrice = 0;
+                string labCode = "";
+                DateTime labDateEnc = DateTime.Now;
+                string labDate = "";
+                string labDoc = "";
+
+                //Request loop for string join
+                //List<string> valRequest = new List<string>();
+
+                //foreach (var item in listTestLAB.SelectedItems)
+                //{
+                //    valRequest.Add(item.ToString());
+                //}
+
+                //request = String.Join<string>(String.Empty, valRequest);
+                
+                //Top code didn't work
+
+                string[] items = listTestLAB.Items.OfType<object>().Select(item => item.ToString()).ToArray();
+                request = string.Join(", ", items);
+
+                //End Request loop
+
+                labCode = generateLABCode("LAB");
+
+                labDate = txtLABDate.Text;
+
+                labDoc = txtDoctor.Text.Split(' ').Last();
+
+                if (txtLABTotal.Text == "")
+                {
+                    labPrice = decimal.Parse("0");
+                }
+                else
+                {
+                    labPrice = decimal.Parse(txtLABTotal.Text);
+                }
+
+                Laboratory labObj = new Laboratory(request, labPrice, labCode, labDateEnc, labDate, labDoc, patientCompleteCode);
+
+                if (labObj.insertLaboratory() == true)
+                {
+                    MessageBox.Show("Laboratory Record added.");
+                    UncheckAllItems();
+                }
+                else
+                {
+                    MessageBox.Show("Laboratory Record not added.");
+                }
+
+            }
+            catch (Exception exLabSubmit)
+            {
+                MessageBox.Show("Laboratory Error: " + exLabSubmit.Message + Environment.NewLine + Environment.NewLine + "Input Patient Details or Total is blank/invalid.");
+            }
+        }
+
+        private void UncheckAllItems()
+        {
+            while (checkedListBoxLAB1.CheckedIndices.Count > 0)
+                checkedListBoxLAB1.SetItemChecked(checkedListBoxLAB1.CheckedIndices[0], false);
+            while (checkedListBoxLAB2.CheckedIndices.Count > 0)
+                checkedListBoxLAB2.SetItemChecked(checkedListBoxLAB2.CheckedIndices[0], false);
+            while (checkedListBoxLAB3.CheckedIndices.Count > 0)
+                checkedListBoxLAB3.SetItemChecked(checkedListBoxLAB3.CheckedIndices[0], false);
+            while (checkedListBoxLAB4.CheckedIndices.Count > 0)
+                checkedListBoxLAB4.SetItemChecked(checkedListBoxLAB4.CheckedIndices[0], false);
+            while (checkedListBoxLAB5.CheckedIndices.Count > 0)
+                checkedListBoxLAB5.SetItemChecked(checkedListBoxLAB5.CheckedIndices[0], false);
+            listTestLAB.Items.Clear();
+            txtLABDate.Clear();
+            txtLABTotal.Clear();
         }
 
         private void btnXRAYSubmit_Click(object sender, EventArgs e)
