@@ -11,5 +11,7 @@ namespace LaboratoryProject
     public static class StaticValues
     {
         public static LightSpeedContext<LSMLaboratoryUnitOfWork> lscon = new LightSpeedContext<LSMLaboratoryUnitOfWork>();
+        public static object listOb;
+        public static object listUltraObj;
     }
 }

@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using Mindscape.LightSpeed;
 using Mindscape.LightSpeed.Linq;
 using Mindscape.LightSpeed.Querying;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.ReportSource;
 
 namespace LaboratoryProject
 {
@@ -635,6 +637,10 @@ namespace LaboratoryProject
                         patientCodeGen();
                         tXray.CodePatient = patientCompleteCode;
                     }
+                    else
+                    {
+                        tXray.CodePatient = txtPatientCode.Text;
+                    }
                     
                     tXray.CodeXRay = generateXRAYCode("XR");
                     tXray.FilmNo = xRayInfo().FilmNo;
@@ -651,6 +657,9 @@ namespace LaboratoryProject
                         uow.SaveChanges();
                         MessageBox.Show("XRay record saved.");
                         addNewPatient();
+
+                        submitXRAYReport(txtFirstName.Text + " " + txtLastName.Text, txtXRAYRoentgenography.Text, txtDoctor.Text, txtXRAYDateTimePerformed.Text, txtAge.Text, txtGender.Text, txtXRAYFilmNo.Text, txtXRAYFindings.Text ,txtXRAYRemarks.Text, txtXRAYRadTech.Text);
+
                     }
 
                 }
@@ -658,6 +667,121 @@ namespace LaboratoryProject
             catch (Exception er)
             {
                 MessageBox.Show("Saving XRay error: Cause might be lack of Patient First and Last name. Error message: " + Environment.NewLine + er);
+            }
+        }
+
+
+        public void submitXRAYReport(string patient, string roent, string doc, string dateperformed, string age, string sex, string filmNo, string findings, string remarks, string radiologist)
+        {
+            try
+            {
+                XRay xray = new XRay();
+                xray.Patient = patient;
+                xray.Roentgenography = roent;
+                xray.Doctor = doc;
+                xray.DatePerformed = dateperformed;
+                xray.FilmNo = filmNo;
+                xray.Findings = findings;
+                xray.Remarks = remarks;
+                xray.Radiologist = radiologist;
+                xray.Age = age;
+                xray.Gender = sex;
+
+                List<XRay> listXray = new List<XRay>();
+                listXray.Add(xray);
+                StaticValues.listOb = listXray;
+
+                crXRay xReport = new crXRay();
+                xReport.SetDataSource(listXray);
+
+                FormReportsXRay fXRAY = new FormReportsXRay();
+                fXRAY.ShowDialog();
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
+            }
+            
+        }
+
+        private void btnULTRASubmit_Click(object sender, EventArgs e)
+        {
+            var pTextFirstname = "";
+            var pTextLastname = "";
+            var pAge = "";
+
+            pTextFirstname = txtFirstName.Text;
+            pTextLastname = txtLastName.Text;
+            pAge = txtAge.Text;
+            if (pTextLastname == "" || pAge == "" || pTextFirstname == "")
+            {
+                DialogResult dialogResult = MessageBox.Show("Patient details incomplete, continue saving?", "Warning", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    patientCodeGen();
+                    addNewPatient();
+                    if (patientCompleteCode == "")
+                    {
+                        MessageBox.Show("Input Patient Details");
+                        return;
+                    }
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+            }
+            else
+            {
+                patientCodeGen();
+                addNewPatient();
+            }
+
+            var ultraCode = generateXRAYCode("XR");
+
+            Ultrasound ultra = new Ultrasound(txtULTRAFindings.Text, txtULTRAImpression.Text, txtULTRARadiologist.Text, patientCompleteCode, ultraCode, txtULTRADate.Text, DateTime.Now);
+
+            if (ultra.insertUltrasound() == true)
+            {
+                MessageBox.Show("Ultrasound successfully added.");
+                submitUltrasoundReport();
+                FormReportsUltrasound frmUltra = new FormReportsUltrasound();
+                frmUltra.Show();
+            }
+            else
+            {
+                MessageBox.Show("Error adding Ultrasound");
+            }
+        }
+
+        public void submitUltrasoundReport()
+        {
+            try
+            {
+                List<UltrasoundClass> listUltra = new List<UltrasoundClass>();
+                UltrasoundClass ultraObj = new UltrasoundClass();
+
+                ultraObj.Address = txtAddress.Text;
+                ultraObj.Age = txtAge.Text;
+                ultraObj.CivilStatus = txtULTRACivilStatus.Text;
+                ultraObj.DatePerformed = txtULTRADate.Text;
+                ultraObj.Doctor = txtDoctor.Text;
+                ultraObj.FileNo = txtULTRAFileNo.Text;
+                ultraObj.Findings = txtULTRAFindings.Text;
+                ultraObj.Gender = txtGender.Text;
+                ultraObj.Impression = txtULTRAImpression.Text;
+                ultraObj.Patient = txtFirstName.Text + " " + txtLastName.Text;
+                ultraObj.Radiologist = txtULTRARadiologist.Text;
+                listUltra.Add(ultraObj);
+
+                StaticValues.listUltraObj = listUltra;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
             }
         }
 

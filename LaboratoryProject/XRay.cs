@@ -15,5 +15,8 @@ namespace LaboratoryProject
         public string Doctor { get; set; }
         public string Radiologist { get; set; }
         public string DatePerformed { get; set; }
+        public string Patient { get; set; }
+        public string Age { get; set; }
+        public string Gender { get; set; }
     }
 }

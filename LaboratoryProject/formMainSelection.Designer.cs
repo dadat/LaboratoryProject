@@ -38,6 +38,8 @@
             this.userControlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtLABTotal = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.txtLABDate = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.btnLABSubmit = new System.Windows.Forms.Button();
@@ -65,6 +67,8 @@
             this.txtXRAYFindings = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txtULTRADate = new System.Windows.Forms.TextBox();
             this.txtULTRARadiologist = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.txtULTRAImpression = new System.Windows.Forms.TextBox();
@@ -99,8 +103,10 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label20 = new System.Windows.Forms.Label();
-            this.txtLABTotal = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txtULTRACivilStatus = new System.Windows.Forms.TextBox();
+            this.txtULTRAFileNo = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -202,6 +208,22 @@
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "LAB";
+            // 
+            // txtLABTotal
+            // 
+            this.txtLABTotal.Location = new System.Drawing.Point(670, 646);
+            this.txtLABTotal.Name = "txtLABTotal";
+            this.txtLABTotal.Size = new System.Drawing.Size(123, 27);
+            this.txtLABTotal.TabIndex = 77;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(619, 646);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(45, 20);
+            this.label20.TabIndex = 76;
+            this.label20.Text = "Total:";
             // 
             // txtLABDate
             // 
@@ -407,7 +429,7 @@
             this.btnXRAYSubmit.Location = new System.Drawing.Point(587, 679);
             this.btnXRAYSubmit.Name = "btnXRAYSubmit";
             this.btnXRAYSubmit.Size = new System.Drawing.Size(206, 32);
-            this.btnXRAYSubmit.TabIndex = 74;
+            this.btnXRAYSubmit.TabIndex = 7;
             this.btnXRAYSubmit.Text = "Submit";
             this.btnXRAYSubmit.UseVisualStyleBackColor = true;
             this.btnXRAYSubmit.Click += new System.EventHandler(this.btnXRAYSubmit_Click);
@@ -418,7 +440,7 @@
             this.txtXRAYRemarks.Multiline = true;
             this.txtXRAYRemarks.Name = "txtXRAYRemarks";
             this.txtXRAYRemarks.Size = new System.Drawing.Size(684, 129);
-            this.txtXRAYRemarks.TabIndex = 12;
+            this.txtXRAYRemarks.TabIndex = 6;
             // 
             // label15
             // 
@@ -434,7 +456,7 @@
             this.txtXRAYDateTimePerformed.Location = new System.Drawing.Point(412, 103);
             this.txtXRAYDateTimePerformed.Name = "txtXRAYDateTimePerformed";
             this.txtXRAYDateTimePerformed.Size = new System.Drawing.Size(334, 27);
-            this.txtXRAYDateTimePerformed.TabIndex = 10;
+            this.txtXRAYDateTimePerformed.TabIndex = 4;
             // 
             // label13
             // 
@@ -450,7 +472,7 @@
             this.txtXRAYRadTech.Location = new System.Drawing.Point(62, 103);
             this.txtXRAYRadTech.Name = "txtXRAYRadTech";
             this.txtXRAYRadTech.Size = new System.Drawing.Size(344, 27);
-            this.txtXRAYRadTech.TabIndex = 8;
+            this.txtXRAYRadTech.TabIndex = 2;
             // 
             // label14
             // 
@@ -466,7 +488,7 @@
             this.txtXRAYFilmNo.Location = new System.Drawing.Point(412, 46);
             this.txtXRAYFilmNo.Name = "txtXRAYFilmNo";
             this.txtXRAYFilmNo.Size = new System.Drawing.Size(334, 27);
-            this.txtXRAYFilmNo.TabIndex = 6;
+            this.txtXRAYFilmNo.TabIndex = 3;
             // 
             // label12
             // 
@@ -482,7 +504,7 @@
             this.txtXRAYRoentgenography.Location = new System.Drawing.Point(62, 46);
             this.txtXRAYRoentgenography.Name = "txtXRAYRoentgenography";
             this.txtXRAYRoentgenography.Size = new System.Drawing.Size(344, 27);
-            this.txtXRAYRoentgenography.TabIndex = 3;
+            this.txtXRAYRoentgenography.TabIndex = 1;
             // 
             // label11
             // 
@@ -499,7 +521,7 @@
             this.txtXRAYFindings.Multiline = true;
             this.txtXRAYFindings.Name = "txtXRAYFindings";
             this.txtXRAYFindings.Size = new System.Drawing.Size(684, 264);
-            this.txtXRAYFindings.TabIndex = 1;
+            this.txtXRAYFindings.TabIndex = 5;
             // 
             // label10
             // 
@@ -512,6 +534,12 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.txtULTRAFileNo);
+            this.groupBox4.Controls.Add(this.label23);
+            this.groupBox4.Controls.Add(this.txtULTRACivilStatus);
+            this.groupBox4.Controls.Add(this.label22);
+            this.groupBox4.Controls.Add(this.label21);
+            this.groupBox4.Controls.Add(this.txtULTRADate);
             this.groupBox4.Controls.Add(this.txtULTRARadiologist);
             this.groupBox4.Controls.Add(this.label18);
             this.groupBox4.Controls.Add(this.txtULTRAImpression);
@@ -525,6 +553,22 @@
             this.groupBox4.TabIndex = 15;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "ULTRASOUND";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(53, 358);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(44, 20);
+            this.label21.TabIndex = 80;
+            this.label21.Text = "Date:";
+            // 
+            // txtULTRADate
+            // 
+            this.txtULTRADate.Location = new System.Drawing.Point(57, 381);
+            this.txtULTRADate.Name = "txtULTRADate";
+            this.txtULTRADate.Size = new System.Drawing.Size(368, 27);
+            this.txtULTRADate.TabIndex = 79;
             // 
             // txtULTRARadiologist
             // 
@@ -547,7 +591,7 @@
             this.txtULTRAImpression.Location = new System.Drawing.Point(57, 234);
             this.txtULTRAImpression.Multiline = true;
             this.txtULTRAImpression.Name = "txtULTRAImpression";
-            this.txtULTRAImpression.Size = new System.Drawing.Size(368, 68);
+            this.txtULTRAImpression.Size = new System.Drawing.Size(684, 68);
             this.txtULTRAImpression.TabIndex = 76;
             // 
             // label17
@@ -567,6 +611,7 @@
             this.btnULTRASubmit.TabIndex = 74;
             this.btnULTRASubmit.Text = "Submit";
             this.btnULTRASubmit.UseVisualStyleBackColor = true;
+            this.btnULTRASubmit.Click += new System.EventHandler(this.btnULTRASubmit_Click);
             // 
             // txtULTRAFindings
             // 
@@ -856,21 +901,37 @@
             this.tabPage4.Text = "ULTRASOUND";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // label20
+            // label22
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(619, 646);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(45, 20);
-            this.label20.TabIndex = 76;
-            this.label20.Text = "Total:";
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(53, 411);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(84, 20);
+            this.label22.TabIndex = 81;
+            this.label22.Text = "Civil Status:";
             // 
-            // txtLABTotal
+            // txtULTRACivilStatus
             // 
-            this.txtLABTotal.Location = new System.Drawing.Point(670, 646);
-            this.txtLABTotal.Name = "txtLABTotal";
-            this.txtLABTotal.Size = new System.Drawing.Size(123, 27);
-            this.txtLABTotal.TabIndex = 77;
+            this.txtULTRACivilStatus.Location = new System.Drawing.Point(57, 434);
+            this.txtULTRACivilStatus.Name = "txtULTRACivilStatus";
+            this.txtULTRACivilStatus.Size = new System.Drawing.Size(368, 27);
+            this.txtULTRACivilStatus.TabIndex = 82;
+            // 
+            // txtULTRAFileNo
+            // 
+            this.txtULTRAFileNo.Location = new System.Drawing.Point(57, 487);
+            this.txtULTRAFileNo.Name = "txtULTRAFileNo";
+            this.txtULTRAFileNo.Size = new System.Drawing.Size(368, 27);
+            this.txtULTRAFileNo.TabIndex = 84;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(53, 464);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(62, 20);
+            this.label23.TabIndex = 83;
+            this.label23.Text = "File No.:";
             // 
             // formMainSelection
             // 
@@ -984,5 +1045,11 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txtLABTotal;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox txtULTRADate;
+        private System.Windows.Forms.TextBox txtULTRACivilStatus;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox txtULTRAFileNo;
+        private System.Windows.Forms.Label label23;
     }
 }

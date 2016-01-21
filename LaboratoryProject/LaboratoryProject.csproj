@@ -11,6 +11,22 @@
     <AssemblyName>LaboratoryProject</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\David\Desktop\PLMSC files\Installer\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,7 +47,24 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>19129AB16E4AAEAA0A8360A2C96CAFFC1818A704</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>LaboratoryProject_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="Mindscape.LightSpeed">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Mindscape\LightSpeed\Bin\Mindscape.LightSpeed.dll</HintPath>
     </Reference>
@@ -40,6 +73,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,6 +85,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="crULTRA.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crULTRA.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="crXRay.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crXRay.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSetXRAY.cs">
+      <DependentUpon>DataSetXRAY.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSetXRAY.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetXRAY.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +123,18 @@
     </Compile>
     <Compile Include="formMainSelection.Designer.cs">
       <DependentUpon>formMainSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportsUltrasound.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportsUltrasound.Designer.cs">
+      <DependentUpon>FormReportsUltrasound.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportsXRay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportsXRay.Designer.cs">
+      <DependentUpon>FormReportsXRay.cs</DependentUpon>
     </Compile>
     <Compile Include="FormServicesMaint.cs">
       <SubType>Form</SubType>
@@ -91,8 +159,18 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StaticValues.cs" />
+    <Compile Include="Ultrasound.cs" />
+    <Compile Include="UltrasoundClass.cs" />
     <Compile Include="User.cs" />
     <Compile Include="XRay.cs" />
+    <EmbeddedResource Include="crULTRA.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crULTRA.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="crXRay.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crXRay.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -102,6 +180,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formMainSelection.resx">
       <DependentUpon>formMainSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportsUltrasound.resx">
+      <DependentUpon>FormReportsUltrasound.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportsXRay.resx">
+      <DependentUpon>FormReportsXRay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormServicesMaint.resx">
       <DependentUpon>FormServicesMaint.cs</DependentUpon>
@@ -118,6 +202,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="DataSetXRAY.xsc">
+      <DependentUpon>DataSetXRAY.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetXRAY.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetXRAY.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetXRAY.xss">
+      <DependentUpon>DataSetXRAY.xsd</DependentUpon>
+    </None>
+    <None Include="LaboratoryProject_TemporaryKey.pfx" />
     <None Include="LSMLaboratory.lsmodel">
       <Generator>LightSpeedModelGenerator</Generator>
       <LastGenOutput>LSMLaboratory.cs</LastGenOutput>
@@ -137,6 +233,26 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
