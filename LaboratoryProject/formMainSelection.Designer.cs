@@ -67,6 +67,10 @@
             this.txtXRAYFindings = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtULTRAFileNo = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txtULTRACivilStatus = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.txtULTRADate = new System.Windows.Forms.TextBox();
             this.txtULTRARadiologist = new System.Windows.Forms.TextBox();
@@ -103,10 +107,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label22 = new System.Windows.Forms.Label();
-            this.txtULTRACivilStatus = new System.Windows.Forms.TextBox();
-            this.txtULTRAFileNo = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -133,6 +134,8 @@
             // 
             // fileToolStripMenuItem
             // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -145,6 +148,7 @@
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
             this.helpToolStripMenuItem.Text = "Maintenance";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // servicesToolStripMenuItem
             // 
@@ -554,6 +558,38 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "ULTRASOUND";
             // 
+            // txtULTRAFileNo
+            // 
+            this.txtULTRAFileNo.Location = new System.Drawing.Point(57, 487);
+            this.txtULTRAFileNo.Name = "txtULTRAFileNo";
+            this.txtULTRAFileNo.Size = new System.Drawing.Size(368, 27);
+            this.txtULTRAFileNo.TabIndex = 84;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(53, 464);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(62, 20);
+            this.label23.TabIndex = 83;
+            this.label23.Text = "File No.:";
+            // 
+            // txtULTRACivilStatus
+            // 
+            this.txtULTRACivilStatus.Location = new System.Drawing.Point(57, 434);
+            this.txtULTRACivilStatus.Name = "txtULTRACivilStatus";
+            this.txtULTRACivilStatus.Size = new System.Drawing.Size(368, 27);
+            this.txtULTRACivilStatus.TabIndex = 82;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(53, 411);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(84, 20);
+            this.label22.TabIndex = 81;
+            this.label22.Text = "Civil Status:";
+            // 
             // label21
             // 
             this.label21.AutoSize = true;
@@ -901,37 +937,12 @@
             this.tabPage4.Text = "ULTRASOUND";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // label22
+            // aboutToolStripMenuItem
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(53, 411);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(84, 20);
-            this.label22.TabIndex = 81;
-            this.label22.Text = "Civil Status:";
-            // 
-            // txtULTRACivilStatus
-            // 
-            this.txtULTRACivilStatus.Location = new System.Drawing.Point(57, 434);
-            this.txtULTRACivilStatus.Name = "txtULTRACivilStatus";
-            this.txtULTRACivilStatus.Size = new System.Drawing.Size(368, 27);
-            this.txtULTRACivilStatus.TabIndex = 82;
-            // 
-            // txtULTRAFileNo
-            // 
-            this.txtULTRAFileNo.Location = new System.Drawing.Point(57, 487);
-            this.txtULTRAFileNo.Name = "txtULTRAFileNo";
-            this.txtULTRAFileNo.Size = new System.Drawing.Size(368, 27);
-            this.txtULTRAFileNo.TabIndex = 84;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(53, 464);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(62, 20);
-            this.label23.TabIndex = 83;
-            this.label23.Text = "File No.:";
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // formMainSelection
             // 
@@ -1051,5 +1062,6 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox txtULTRAFileNo;
         private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }

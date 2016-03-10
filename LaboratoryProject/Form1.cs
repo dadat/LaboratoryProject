@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Mindscape.LightSpeed;
+using Mindscape.LightSpeed.Linq;
+using Mindscape.LightSpeed.Querying;
 
 namespace LaboratoryProject
 {
@@ -23,15 +26,46 @@ namespace LaboratoryProject
             {
                 LabConnection labCon = new LabConnection();
                 labCon.LoadConnection();
-                Hide();
-                formMainSelection a = new formMainSelection();
-                a.ShowDialog();
-                a = null;
-                Show();
+
+                FormUserControl objUser = new FormUserControl();
+                using (var uow = StaticValues.lscon.CreateUnitOfWork())
+                {
+                    //Master user
+                    if (txtUsername.Text == "borloloy" && txtPassword.Text == "ido")
+                    {
+                        StaticValues.userRoleLogged = "SUPER";
+                        Hide();
+                        formMainSelection a = new formMainSelection();
+                        a.ShowDialog();
+                        a = null;
+                        Show();
+                        return;
+                    }
+
+                    var userLogging = (from us in uow.TblUsers where us.Password == objUser.Crypt(txtPassword.Text) & us.Username == txtUsername.Text select us).FirstOrDefault();
+                    StaticValues.userLoggedIn = userLogging.Username;
+                    StaticValues.userRoleLogged = userLogging.Role;
+
+                    if (userLogging.Password == objUser.Crypt(txtPassword.Text) && userLogging.Username == txtUsername.Text)
+                    {
+                        Hide();
+                        formMainSelection a = new formMainSelection();
+                        a.ShowDialog();
+                        a = null;
+                        Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show(this, "Username is incorrect.", "Error");
+                    }
+
+                }
+
+
             }
             catch (Exception er)
             {
-                MessageBox.Show(er.ToString());
+                MessageBox.Show(this, "Username or Password is incorrect.", "Error");
             }
         }
 

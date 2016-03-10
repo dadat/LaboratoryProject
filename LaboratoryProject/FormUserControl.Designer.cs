@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUserControl));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btnAddUser = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnAddUser = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtRole = new System.Windows.Forms.ComboBox();
             this.txtAddPassword = new System.Windows.Forms.TextBox();
@@ -80,16 +80,6 @@
             this.tabPage1.Text = "Add User";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // btnAddUser
-            // 
-            this.btnAddUser.Location = new System.Drawing.Point(197, 147);
-            this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(130, 30);
-            this.btnAddUser.TabIndex = 4;
-            this.btnAddUser.Text = "Add New User";
-            this.btnAddUser.UseVisualStyleBackColor = true;
-            this.btnAddUser.Click += new System.EventHandler(this.button1_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnAddUser);
@@ -105,6 +95,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // btnAddUser
+            // 
+            this.btnAddUser.Location = new System.Drawing.Point(197, 147);
+            this.btnAddUser.Name = "btnAddUser";
+            this.btnAddUser.Size = new System.Drawing.Size(130, 30);
+            this.btnAddUser.TabIndex = 4;
+            this.btnAddUser.Text = "Add New User";
+            this.btnAddUser.UseVisualStyleBackColor = true;
+            this.btnAddUser.Click += new System.EventHandler(this.button1_Click);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -119,8 +119,9 @@
             this.txtRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtRole.FormattingEnabled = true;
             this.txtRole.Items.AddRange(new object[] {
-            "USER",
-            "USER2",
+            "XRAY",
+            "LAB",
+            "ULTRASOUND",
             "ADMIN"});
             this.txtRole.Location = new System.Drawing.Point(197, 113);
             this.txtRole.Name = "txtRole";

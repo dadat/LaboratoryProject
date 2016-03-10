@@ -33,5 +33,53 @@ namespace LaboratoryProject.Properties {
                 return ((string)(this["dblabservConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("localhost")]
+        public string myDATASOURCE {
+            get {
+                return ((string)(this["myDATASOURCE"]));
+            }
+            set {
+                this["myDATASOURCE"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("dblabserv")]
+        public string myDB {
+            get {
+                return ((string)(this["myDB"]));
+            }
+            set {
+                this["myDB"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("dvduser")]
+        public string myUSER {
+            get {
+                return ((string)(this["myUSER"]));
+            }
+            set {
+                this["myUSER"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("dvdpassword")]
+        public string myPASSWORD {
+            get {
+                return ((string)(this["myPASSWORD"]));
+            }
+            set {
+                this["myPASSWORD"] = value;
+            }
+        }
     }
 }

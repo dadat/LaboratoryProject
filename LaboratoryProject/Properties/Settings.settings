@@ -10,5 +10,17 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=localhost;Initial Catalog=dblabserv;Persist Security Info=True;User ID=dvduser;Password=dvdpassword</Value>
     </Setting>
+    <Setting Name="myDATASOURCE" Type="System.String" Scope="User">
+      <Value Profile="(Default)">localhost</Value>
+    </Setting>
+    <Setting Name="myDB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">dblabserv</Value>
+    </Setting>
+    <Setting Name="myUSER" Type="System.String" Scope="User">
+      <Value Profile="(Default)">dvduser</Value>
+    </Setting>
+    <Setting Name="myPASSWORD" Type="System.String" Scope="User">
+      <Value Profile="(Default)">dvdpassword</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

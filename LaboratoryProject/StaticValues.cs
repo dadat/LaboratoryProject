@@ -13,5 +13,7 @@ namespace LaboratoryProject
         public static LightSpeedContext<LSMLaboratoryUnitOfWork> lscon = new LightSpeedContext<LSMLaboratoryUnitOfWork>();
         public static object listOb;
         public static object listUltraObj;
+        public static string userLoggedIn;
+        public static string userRoleLogged;
     }
 }

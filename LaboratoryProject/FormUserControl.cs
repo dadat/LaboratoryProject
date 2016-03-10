@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Mindscape.LightSpeed.Querying;
 using Mindscape.LightSpeed;
+using System.Security.Cryptography;
 
 namespace LaboratoryProject
 {
@@ -24,7 +25,7 @@ namespace LaboratoryProject
             try
             {
                 var uName = txtAddUsername.Text;
-                var pWord = txtAddPassword.Text;
+                var pWord = Crypt(txtAddPassword.Text);
                 var role = txtRole.Text;
 
                 using (var uow = StaticValues.lscon.CreateUnitOfWork())
@@ -51,6 +52,27 @@ namespace LaboratoryProject
                 throw;
             }
 
+        }
+
+        private byte[] key = new byte[8] { 1, 2, 3, 4, 5, 6, 7, 8 };
+        private byte[] iv = new byte[8] { 1, 2, 3, 4, 5, 6, 7, 8 };
+
+        public string Crypt(string text)
+        {
+            SymmetricAlgorithm algorithm = DES.Create();
+            ICryptoTransform transform = algorithm.CreateEncryptor(key, iv);
+            byte[] inputbuffer = Encoding.Unicode.GetBytes(text);
+            byte[] outputBuffer = transform.TransformFinalBlock(inputbuffer, 0, inputbuffer.Length);
+            return Convert.ToBase64String(outputBuffer);
+        }
+
+        private string Decrypt(string text)
+        {
+            SymmetricAlgorithm algorithm = DES.Create();
+            ICryptoTransform transform = algorithm.CreateDecryptor(key, iv);
+            byte[] inputbuffer = Convert.FromBase64String(text);
+            byte[] outputBuffer = transform.TransformFinalBlock(inputbuffer, 0, inputbuffer.Length);
+            return Encoding.Unicode.GetString(outputBuffer);
         }
 
         private void clearText()

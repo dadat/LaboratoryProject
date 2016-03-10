@@ -13,12 +13,11 @@ namespace LaboratoryProject
     class LabConnection
     {
 
-
         private void LoadLabConnection()
         {
             try
             {
-                StaticValues.lscon.ConnectionString = "Data Source=localhost;Initial Catalog=dblabserv;Persist Security Info=True;User ID=dvduser;Password=dvdpassword";
+                StaticValues.lscon.ConnectionString = "Data Source=" + Properties.Settings.Default.myDATASOURCE + ";Initial Catalog=" + Properties.Settings.Default.myDB + ";Persist Security Info=True;User ID=" + Properties.Settings.Default.myUSER + ";Password=" + Properties.Settings.Default.myPASSWORD;
                 StaticValues.lscon.IdentityMethod = IdentityMethod.IdentityColumn;
                 StaticValues.lscon.DataProvider = DataProvider.SqlServer2008;
                 StaticValues.lscon.QuoteIdentifiers = true;

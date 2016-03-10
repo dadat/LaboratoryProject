@@ -131,9 +131,9 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(170)))), ((int)(((byte)(157)))));
             this.label4.Location = new System.Drawing.Point(425, 232);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 20);
+            this.label4.Size = new System.Drawing.Size(49, 20);
             this.label4.TabIndex = 4;
-            this.label4.Text = "v 1.0.2";
+            this.label4.Text = "v 2.6.3";
             // 
             // formMain
             // 

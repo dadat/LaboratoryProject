@@ -24,9 +24,6 @@ namespace LaboratoryProject
 
         public string patientCompleteCode { get; set; }
 
-        
-        
-
         private void patientCodeGen()
         {
             patientInfo();
@@ -82,6 +79,7 @@ namespace LaboratoryProject
         {
             try
             {
+                roleDependency();
                 txtLABOther.Enabled = false;
                 checkedListBoxLAB1.CheckOnClick = true;
                 checkedListBoxLAB2.CheckOnClick = true;
@@ -101,6 +99,33 @@ namespace LaboratoryProject
             }
         }
 
+        private void roleDependency()
+        {
+            if (StaticValues.userRoleLogged != "ADMIN")
+            {
+                menuStrip1.Visible = false;
+            }
+            if (StaticValues.userRoleLogged == "SUPER")
+            {
+                menuStrip1.Visible = true;
+            }
+            if (StaticValues.userRoleLogged == "XRAY")
+            {
+                tabControl1.TabPages.Remove(tabPage4);
+                tabControl1.TabPages.Remove(tabPage2);
+            }
+            if (StaticValues.userRoleLogged == "LAB")
+            {
+                tabControl1.TabPages.Remove(tabPage4);
+                tabControl1.TabPages.Remove(tabPage3);
+            }
+            if (StaticValues.userRoleLogged == "ULTRASOUND")
+            {
+                tabControl1.TabPages.Remove(tabPage2);
+                tabControl1.TabPages.Remove(tabPage3);
+            }
+        }
+
         private void listToComboDoc(List<TblDoctor> doctors)
         {
             try
@@ -115,7 +140,6 @@ namespace LaboratoryProject
                 MessageBox.Show("List error: " + er.ToString());
                 throw;
             }
-
 
         }
 
@@ -213,7 +237,6 @@ namespace LaboratoryProject
                         {
                             uow.Add(tPatient);
                         }
-
                     }
 
                     if (tTrans.Errors.Count == 0 && tPatient.Errors.Count == 0)
@@ -783,6 +806,16 @@ namespace LaboratoryProject
                 MessageBox.Show(ex.Message);
                 throw;
             }
+        }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(this, "Developer: \nDavid Martin Barredo\n\nInquiries: \ndavid@barredo.co\n\nGithub: \ngithub.com/dadat", "About");
         }
 
     }
