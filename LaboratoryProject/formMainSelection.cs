@@ -178,11 +178,7 @@ namespace LaboratoryProject
             {
                 return;
             }
-            //if (txtAge.Text == "")
-            //{
-            //    MessageBox.Show("Please input age.");
-            //    return;
-            //}
+
             try
             {
                 var pFName = txtFirstName.Text.ToUpper();
@@ -576,18 +572,6 @@ namespace LaboratoryProject
                 string labDate = "";
                 string labDoc = "";
 
-                //Request loop for string join
-                //List<string> valRequest = new List<string>();
-
-                //foreach (var item in listTestLAB.SelectedItems)
-                //{
-                //    valRequest.Add(item.ToString());
-                //}
-
-                //request = String.Join<string>(String.Empty, valRequest);
-                
-                //Top code didn't work
-
                 string[] items = listTestLAB.Items.OfType<object>().Select(item => item.ToString()).ToArray();
                 request = string.Join(", ", items);
 
@@ -806,11 +790,6 @@ namespace LaboratoryProject
                 MessageBox.Show(ex.Message);
                 throw;
             }
-        }
-
-        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)

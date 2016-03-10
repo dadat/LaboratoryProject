@@ -116,9 +116,7 @@ namespace LaboratoryProject
                     {
                         listDoctor.Items.Add(item.CodeDoctor + " - " + item.DocLastName + ", " + item.DocFirstName);
                     }
-
                 }
-
 
             }
             catch (Exception er)

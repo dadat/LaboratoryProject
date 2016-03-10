@@ -58,9 +58,7 @@ namespace LaboratoryProject
                     {
                         MessageBox.Show(this, "Username is incorrect.", "Error");
                     }
-
                 }
-
 
             }
             catch (Exception er)
